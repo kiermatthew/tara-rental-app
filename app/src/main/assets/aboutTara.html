@@ -1,0 +1,311 @@
+<!--<!DOCTYPE html>-->
+
+<!--<html>-->
+
+<!--<head>-->
+<!--    <meta charset='utf-8'>-->
+<!--    <meta name='viewport' content='width=device-width'>-->
+<!--    &lt;!&ndash;    <title>About TARA</title>&ndash;&gt;-->
+<!--    <link rel="stylesheet" href="styles.css">-->
+<!--    <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div>-->
+<!--    <br><br><br><strong>What is TARA?</strong> <p>-->
+<!--    TARA is a people-to-people vehicle sharing platform where Guests-->
+<!--    can rent any vehicle from the TARA community that meets the needs and-->
+<!--    expectations for their planned and upcoming travels.-->
+<!--</p><p>-->
+<!--    TARA envisions a world where people are more connected, mobility is improved,-->
+<!--    and travel is simplified. We strive to assist our guests, particularly someone without a vehicle,-->
+<!--    in filling the gaps in their travel by exploring with any vehicle.-->
+<!--    We also want to provide Hosts the opportunity to increase their income in financing their vehicles-->
+<!--    and their lives while also helping in the improvement of mobility in the Philippines.-->
+<!--</p><br>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--    <p><strong>Benefits of TARA Vehicle Sharing App</strong></p>-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--            Find the ideal car for your needs.<br>-->
+<!--            From dream cars to daily driving, we have a huge selection of 4-wheelers to any occasion.-->
+<!--            Whether its weddings, joyrides around town, road trips, adventures to new places,-->
+<!--            you can rent your desired vehicle at an affordable rate from TARA.-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            Be sustainable and eco-friendly.<br>-->
+<!--            Sharing a car eliminates around 11 vehicles from the road, resulting in lower carbon emissions,-->
+<!--            less pollution, and better air quality. By sharing a car, we are doing ourselves and-->
+<!--            the planet a favor.-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            Enhance your quality of life.<br>-->
+<!--            TARA's goal is to create improved mobility features with the best vehicle sharing experience ever.-->
+<!--            Share your vehicle as a Host to earn extra income and rent out other host vehicles for any drive.-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            Strengthen Community Experience<br>-->
+<!--            Meet people who share your interests in the TARA vehicle sharing community.-->
+<!--            TARA aspires to create a community that shares the goal of increasing mobility,-->
+<!--            reducing carbon emissions, and creating a better environment for humanity.-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width'>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .container{
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .carousel{
+
+        border: 2px solid white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider{
+        height: 100%;
+        display: flex;
+        width: 200%;
+        border: 1px solid white;
+        transition: all 0.3s;
+    }
+
+    .slider section{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .controls .arrow{
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+     .controls .arrow material-icons{
+        font-size: 60px;
+    }
+
+    .arrow.left{
+        left: 10px;
+    }
+
+    .arrow.right{
+        right: 10px;
+    }
+
+    .what, .benefit{
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1{
+        font-size: 32px;
+        color: #021638;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    h1::after{
+        content: '';
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(to right, #354562, #021638);
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-tara, .tara-benefit{
+        width: 80%;
+        max-width: 700px;
+        height: 650px;
+        border-radius: 10px;
+        box-shadow: -10px 10px 40px rgba(0,0,0,0.25);
+        position: relative;
+    }
+
+    .card{
+        height: 650px;
+        padding: 40px;
+        color: #021638;
+        line-height: 22px;
+        box-sizing: border-box;
+        background: #f2d41d;
+        position: relative;
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    .first, .second, .third, .fourth{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .first img, .second img, .third img, .fourth img{
+        width: 60px;
+        margin-right: 30px;
+    }
+
+    h2{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    p {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: auto;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="carousel">
+        <div class="slider">
+            <section>
+                <div class="what">
+                    <h1>What is TARA?</h1>
+                    <div class = "about-tara">
+                        <div class = "card">
+                            <p>
+                                TARA is a people-to-people vehicle sharing platform where Guests
+                                can rent any vehicle from the TARA community that meets the needs and
+                                expectations for their planned and upcoming travels.
+                            </p><br><p>
+                                TARA envisions a world where people are more connected, mobility is improved,
+                                and travel is simplified. We strive to assist our guests, particularly someone without a vehicle,
+                                in filling the gaps in their travel by exploring with any vehicle.
+                                We also want to provide Hosts the opportunity to increase their income in financing their vehicles
+                                and their lives while also helping in the improvement of mobility in the Philippines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="benefit">
+                    <h1>What are the benefits?</h1>
+                    <div class = "tara-benefit">
+                        <div class = "card">
+                            <div class = "first">
+                                <img src="images/1.png">
+                                <div>
+                                    <h2>Find the ideal car for your needs.</h2>
+                                    <p>From dream cars to daily driving, we have a huge selection of 4-wheelers to any occasion.
+                                        Whether its weddings, joyrides around town, road trips, adventures to new places,
+                                        you can rent your desired vehicle at an affordable rate from TARA.</p>
+                                </div>
+                            </div>
+                            <div class = "second">
+                                <div>
+                                    <h2>Be sustainable and eco-friendly.</h2>
+                                <img src="images/2.png">
+                                    <p>
+                                        Sharing a car eliminates around 11 vehicles from the road, resulting in lower carbon emissions,
+                                        less pollution, and better air quality. By sharing a car, we are doing ourselves and the planet a favor.</p>
+                                </div>
+                            </div>
+                            <div class = "third">
+                                <img src="images/3.png">
+                                <div>
+                                    <h2>Enhance your quality of life.</h2>
+                                    <p>TARA's goal is to create improved mobility features with the best vehicle sharing experience ever.
+                                        Share your vehicle as a Host to earn extra income and rent out other host vehicles for any drive.</p>
+                                </div>
+                            </div>
+                            <div class = "fourth">
+                                <img src="images/4.png">
+                                <div>
+                                    <h2>Strengthen Community Experience</h2>
+                                    <p>Meet people who share your interests in the TARA vehicle sharing community.
+                                        TARA aspires to create a community that shares the goal of increasing mobility,
+                                        reducing carbon emissions, and creating a better environment for humanity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class = "controls">
+        <span class="arrow left">
+            <span class = "material-icons"><img src="images/arrow_left.png" alt="arrow_left"></span>
+        </span>
+            <span class="arrow right">
+            <span class = "material-icons"><img src="images/arrow_right.png" alt="arrow_right"></span>
+        </span>
+        </div>
+    </div>
+</div>
+<script>
+    const slider = document.querySelector('.slider');
+    const leftArrow = document.querySelector('.left');
+    const rightArrow = document.querySelector('.right');
+
+    var sectionIndex = 0;
+
+    document.querySelectorAll('.controls li').forEach(function(indicator, ind){
+        indicator.addEventListener('click', function(){
+        sectionIndex = ind;
+        document.querySelector('.controls .selected').classList.remove('selected');
+        indicator.classList.add('selected');
+        slider.style.transform = 'translate('+ (sectionIndex) * -50 + '%)';
+
+        });
+
+    });
+
+    leftArrow.addEventListener('click', function(){
+        sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 0;
+        slider.style.transform = 'translate('+ (sectionIndex) * -50 + '%)';
+    });
+
+    rightArrow.addEventListener('click', function(){
+        sectionIndex = (sectionIndex < 1) ? sectionIndex + 1 : 1
+        slider.style.transform = 'translate('+ (sectionIndex) * -50 + '%)';
+    });
+
+</script>
+
+</body>
+
+</html>

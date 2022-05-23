@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayish_blue1"
+    tools:context=".Profile.ProfileFragmentMenu">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <!--profile info-->
+        <LinearLayout
+            android:id="@+id/profileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+<!--            profile photo -->
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="center"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:cardCornerRadius="30dp"
+                android:layout_marginLeft="20dp">
+                <ImageView
+                    android:id="@+id/userPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_profile_image"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+
+<!--            Name-->
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        <!--Misc-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/accountBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawablePadding="10dp"
+                app:drawableLeftCompat="@drawable/ic_profile" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/aboutTaraBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About TARA"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawablePadding="10dp"
+                app:drawableLeftCompat="@drawable/ic_about_tara" />
+
+            <TextView
+                android:id="@+id/howItWorksBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How TARA works"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawablePadding="10dp"
+                app:drawableLeftCompat="@drawable/ic_how_it_works" />
+
+            <TextView
+                android:id="@+id/contactSupportBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact support"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawablePadding="10dp"
+                app:drawableLeftCompat="@drawable/ic_contact_support" />
+
+            <TextView
+                android:id="@+id/legalBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Legal"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawablePadding="10dp"
+                app:drawableLeftCompat="@drawable/ic_legal" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log out"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

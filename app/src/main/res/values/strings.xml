@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">TARA</string>
+    <string name="account">Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="client_id">853389619704-58v8odaobjd0i646r2oobvcm6a39kavm.apps.googleusercontent.com</string>
+    <string name="databasePath">https://tara-351111-default-rtdb.firebaseio.com/</string>
+    <string name="step2_title">Customize your sharing preference</string>
+    <string name="step2_info">You\'re in control! Decide your daily earnings, availability and sharing preferences</string>
+    <string name="step1_title">Details about your car</string>
+    <string name="step1_info">Let renters know what they\'re getting</string>
+    <string name="step3_title">Upload photos of your car</string>
+    <string name="step3_info">A well maintained car guarantees eyeballs. Prepare minimum 3 external/internal photos to upload</string>
+    <string name="infoHeader">Here\'s what we need</string>
+    <string name="infoSubHeader">Just 3 steps to host your car!</string>
+    <string name="locationHeader">Where\'s your car</string>
+    <string name="locationSubHeader">The actual location is needed for our renters to find your car. Don\'t worry your actual location won\'t be shown to public</string>
+    <string name="insuranceHeader">Insurance</string>
+    <string name="protectionHeader">Additional Protection</string>
+    <string name="insuranceSubHeader">Insurance type can be found on the front page\nof your policy</string>
+    <string name="trackSubHeader">Your car can be located and tracked with our \nhighly accurate TARA tracker. A refundable deposit\nof Php 5,000 is applicable</string>
+    <string name="descSubHeader">Tell our renters more about your car and what\nmakes it special!</string>
+    <string name="select">Select Item</string>
+</resources>

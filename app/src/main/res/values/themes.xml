@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TARA" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item> <!--menu selected-->
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/grey_font</item><!--button color-->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/grayish_blue2</item> <!--notif bar-->
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="toolbartex" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="TARA.toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/white</item>
+        <item name="theme">@style/Theme.TARA</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="titleTextAppearance">@style/toolbartex</item>
+    </style>
+
+<!---->
+</resources>
