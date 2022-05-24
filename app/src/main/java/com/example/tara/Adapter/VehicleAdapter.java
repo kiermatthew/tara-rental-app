@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.tara.Main.RecyclerViewInterface;
 
-import com.example.tara.Models.Vehicle;
+import com.example.tara.Host.Vehicle;
 import com.example.tara.R;
 
 import java.util.ArrayList;

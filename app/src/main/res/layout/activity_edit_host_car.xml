@@ -1224,7 +1224,7 @@
                     android:textColor="@color/black"
                     android:lineHeight="20dp"
                     android:paddingLeft="40dp"
-                    android:text="You'll earn 75% of your booking fee" />
+                    android:text="You'll earn 75% of your bookedCars fee" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1248,7 +1248,7 @@
                     android:textColor="@color/black"
                     android:lineHeight="20dp"
                     android:paddingLeft="40dp"
-                    android:text="You'll earn 60% of your booking fee. \nYour car is covered by our commercial \ninsurance" />
+                    android:text="You'll earn 60% of your bookedCars fee. \nYour car is covered by our commercial \ninsurance" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

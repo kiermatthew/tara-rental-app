@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.example.tara.LoginRegistration.LoginActivity;
-import com.example.tara.Models.User;
+import com.example.tara.LoginRegistration.User;
 import com.example.tara.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;

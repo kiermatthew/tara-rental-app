@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tara.Bookings.BookedCars;
 import com.example.tara.Main.RecyclerViewInterface;
-import com.example.tara.Models.Booking;
 import com.example.tara.R;
 
 import java.util.ArrayList;
@@ -22,9 +22,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder>{
     private final int lastPosition = -1;
     Context context;
 
-    ArrayList<Booking> list;
+    ArrayList<BookedCars> list;
 
-    public BookAdapter(Context context, ArrayList<Booking> list, RecyclerViewInterface recyclerViewInterface) {
+    public BookAdapter(Context context, ArrayList<BookedCars> list, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.list = list;
         this.recyclerViewInterface = recyclerViewInterface;
@@ -39,9 +39,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull BookAdapter.MyViewHolder holder, int position) {
-        Booking booking = list.get(position);
-        if(booking!=null){
-            holder.bindBooking(booking);
+        BookedCars bookedCars = list.get(position);
+        if(bookedCars !=null){
+            holder.bindBooking(bookedCars);
         }
     }
 
@@ -54,13 +54,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder>{
         ImageView img;
         TextView bmy, location , price,host,bookedDate;
 
-        void bindBooking(Booking booking) {
-            bmy.setText(booking.getBmy());
-            location.setText(booking.getLocation());
-            price.setText(booking.getPriceRate());
-            host.setText(booking.getName());
-            bookedDate.setText(booking.getBookDate());
-            Glide.with(img.getContext()).load(booking.getExterior1Url()).into(img);
+        void bindBooking(BookedCars bookedCars) {
+            bmy.setText(bookedCars.getBmy());
+            location.setText(bookedCars.getLocation());
+            price.setText(bookedCars.getPriceRate());
+            host.setText(bookedCars.getName());
+            bookedDate.setText(bookedCars.getBookDate());
+            Glide.with(img.getContext()).load(bookedCars.getExterior1Url()).into(img);
         }
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {

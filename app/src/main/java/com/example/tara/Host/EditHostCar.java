@@ -21,7 +21,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import com.example.tara.Main.Main;
-import com.example.tara.Models.CarHost;
 import com.example.tara.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -37,9 +36,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-
-
-import android.os.Bundle;
 
 public class EditHostCar extends AppCompatActivity implements View.OnClickListener {
 
