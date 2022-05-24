@@ -125,28 +125,20 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
+
         ivEditPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 selectImage();
             }
-            //Select image
-
-            private void selectImage() {
-                Intent galleryIntent = new Intent();
-                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent, 2);
-            }
         });
+
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
         if (signInAccount != null) {
             tvName.setText(signInAccount.getDisplayName());
@@ -160,6 +152,7 @@ public class AccountActivity extends AppCompatActivity {
                 User user = snapshot.getValue(User.class);
                 if (user != null) {
                     //display user info
+                    Glide.with(AccountActivity.this).load(user.imageUrl).into(ivEditPhoto);
                     tvName.setText(user.name);
                     tvEmail.setText(user.email);
                 } else {
@@ -172,34 +165,36 @@ public class AccountActivity extends AppCompatActivity {
 
             }
         });
+    }/*End*/
+    private void selectImage() {
+        Intent galleryIntent = new Intent();
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        galleryIntent.setType("image/*");
+        startActivityForResult(galleryIntent, 2);
     }
 
-
-
-
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-
-            //if image is selected, display the image
-            if(requestCode==2 && resultCode== -1 && data != null){
-                imageUri = data.getData();
-                ivEditPhoto.setImageURI(imageUri);
-                saveChangesBtn.setVisibility(View.VISIBLE);
-                saveChangesBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        uploadImage();
-                    }
-                });
-
-                if(signInAccount != null){
-                    Uri photoUrl = signInAccount.getPhotoUrl();
-                    tvEditName.setText(signInAccount.getDisplayName());
-                    Glide.with(this).load(photoUrl).into(ivEditPhoto);
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+         //if image is selected, display the image
+        if(requestCode==2 && resultCode== -1 && data != null){
+            imageUri = data.getData();
+            ivEditPhoto.setImageURI(imageUri);
+            saveChangesBtn.setVisibility(View.VISIBLE);
+            saveChangesBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    uploadImage();
                 }
-                else
-                    ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+            });
+
+            if(signInAccount != null){
+                Uri photoUrl = signInAccount.getPhotoUrl();
+                tvEditName.setText(signInAccount.getDisplayName());
+                Glide.with(this).load(photoUrl).into(ivEditPhoto);
+            }
+            else
+                ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
 
                 Databasereference.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -228,7 +223,6 @@ public class AccountActivity extends AppCompatActivity {
 
             }
         }
-
 
         // upload the image to the cloud storage
         private void uploadImage(){
