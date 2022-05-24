@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.tara.Main.RecyclerViewInterface;
-import com.example.tara.Models.Car;
 import com.example.tara.Adapter.CarAdapter;
 import com.example.tara.R;
 import com.google.firebase.database.DataSnapshot;
@@ -52,6 +51,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
         query = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
+        filteredList = new ArrayList<>();
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
         searchView = view.findViewById(R.id.searchView);
         searchView.setFocusable(false);
@@ -67,8 +67,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                search = newText;
-                filterList(search);
+                filterList(newText);
                 isFiltered = true;
                 return true;
             }
@@ -124,40 +123,35 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
     }
 
     private void filterList(String newText) {
-        filteredList = new ArrayList<>();
-
         query.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 filteredList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         String city = dataSnapshot1.child("city").getValue().toString();
                         String province = dataSnapshot1.child("province").getValue().toString();
                         String street = dataSnapshot1.child("address1").getValue().toString();
                         String barangay = dataSnapshot1.child("address2").getValue().toString();
 
-                        if(city.toLowerCase().contains(newText.toLowerCase())){
+                        if (city.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
-                        }
-                        else if(province.toLowerCase().contains(newText.toLowerCase())){
+                        } else if (province.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
-                        }
-                        else if(street.toLowerCase().contains(newText.toLowerCase())){
+                        } else if (street.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
-                        }
-                        else if(barangay.toLowerCase().contains(newText.toLowerCase())){
+                        } else if (barangay.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
                         }
                     }
-                    myAdapter.setFilteredList(filteredList);
-                    myAdapter.notifyDataSetChanged();
                 }
+                list = new ArrayList<>(filteredList);
+                myAdapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

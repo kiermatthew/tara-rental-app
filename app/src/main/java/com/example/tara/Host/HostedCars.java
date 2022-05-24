@@ -2,7 +2,6 @@ package com.example.tara.Host;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,16 +14,9 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.tara.Adapter.VehicleAdapter;
 import com.example.tara.Main.RecyclerViewInterface;
-import com.example.tara.Models.Car;
-import com.example.tara.Models.Vehicle;
 import com.example.tara.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;

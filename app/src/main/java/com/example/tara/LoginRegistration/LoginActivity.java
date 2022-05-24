@@ -14,9 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tara.Explore.ExploreFragmentMenu;
 import com.example.tara.Main.Main;
-import com.example.tara.Models.User;
 import com.example.tara.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -179,7 +177,7 @@ public class LoginActivity extends AppCompatActivity {
             String imageUrl = signInAccount.getPhotoUrl().toString();
 
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            User userGmail = new User(name,email,userId,imageUrl,false);
+            User userGmail = new User(name,email,userId,imageUrl,false,false);
             String databaseLocation = "https://tara-351111-default-rtdb.firebaseio.com/";
             FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId)
                     .setValue(userGmail).addOnCompleteListener(new OnCompleteListener<Void>() {

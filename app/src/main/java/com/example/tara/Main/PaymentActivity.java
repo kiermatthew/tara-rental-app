@@ -16,10 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tara.Adapter.LoadingDialog;
-import com.example.tara.Models.Booking;
+import com.example.tara.Bookings.BookedCars;
 import com.example.tara.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -82,6 +86,7 @@ public class PaymentActivity extends AppCompatActivity {
                     public void run() {
                         loadingDialog.dismissDialog();
                         uploadData();
+                        book();
                         startActivity(new Intent(PaymentActivity.this,ReceiptActivity.class));
                     }
                 },3000);
@@ -172,6 +177,19 @@ public class PaymentActivity extends AppCompatActivity {
 
     }
 
+    private  void book(){
+        userReference.child("bookedCar").setValue(true).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(PaymentActivity.this,"Something went wrong, try again",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     public void uploadData(){
         key = userReference.push().getKey();
 
@@ -179,9 +197,9 @@ public class PaymentActivity extends AppCompatActivity {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         String date = simpleDateFormat.format(calendar.getTime());
 
-        Booking booking = new Booking(carImageUrl,bmy,location,price,carHostName,date);
+        BookedCars bookedCars = new BookedCars(carImageUrl,bmy,location,price,carHostName,date);
 
-        userReference.child("bookedCars").child(key).setValue(booking);
+        userReference.child("bookedCars").child(key).setValue(bookedCars);
 
     }
 }

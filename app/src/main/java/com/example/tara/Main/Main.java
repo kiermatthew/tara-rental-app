@@ -7,15 +7,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Toast;
 
 
+import com.example.tara.Bookings.BookCar;
+import com.example.tara.Bookings.BookedCars;
 import com.example.tara.Host.HostedCars;
-import com.example.tara.Models.User;
+import com.example.tara.LoginRegistration.User;
 import com.example.tara.Profile.ProfileFragmentMenu;
 import com.example.tara.Explore.ExploreFragmentMenu;
 import com.example.tara.Host.HostFragmentMenu;
@@ -38,7 +38,7 @@ public class Main extends AppCompatActivity {
     private long pressedTime;
     private BottomNavigationView navigation;
     private MainBinding binding;
-    boolean isHost = false;
+    boolean isHost = false, bookedCar = false;
     private FirebaseAuth mAuth;
 
     @SuppressLint("NonConstantResourceId")
@@ -72,6 +72,12 @@ public class Main extends AppCompatActivity {
                 else{
                     isHost = false;
                 }
+                if(user.bookedCar){
+                    bookedCar = true;
+                }
+                else{
+                    bookedCar = false;
+                }
 
             }
             @Override
@@ -87,8 +93,13 @@ public class Main extends AppCompatActivity {
                     replaceFragment(new ExploreFragmentMenu());
                     break;
                 case R.id.bookings:
-                    replaceFragment(new BookingsFragmentMenu());
+                    if(bookedCar)
+                        replaceFragment(new BookingsFragmentMenu());
+                    else
+                        replaceFragment(new BookCar());
                     break;
+                   // replaceFragment(new BookingsFragmentMenu());
+                    //break;
                 case R.id.profile:
                     replaceFragment(new ProfileFragmentMenu());
                     break;
