@@ -16,8 +16,6 @@ public class AboutTara extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_tara);
 
-        WebView webView=findViewById(R.id.webView);
-        webView.loadUrl("file:///android_asset/aboutTara.html");
 
         getSupportActionBar().hide();
         Toolbar toolbar =  findViewById(R.id.appBar);
