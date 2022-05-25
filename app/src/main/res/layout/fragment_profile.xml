@@ -108,13 +108,13 @@
                 android:id="@+id/contactSupportBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contact support"
-                android:textSize="17sp"
-                android:textColor="@color/black"
+                android:drawablePadding="10dp"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:drawablePadding="10dp"
+                android:text="Contact support"
+                android:textColor="@color/black"
+                android:textSize="17sp"
                 app:drawableLeftCompat="@drawable/ic_contact_support" />
 
             <TextView
