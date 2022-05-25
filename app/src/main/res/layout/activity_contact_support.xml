@@ -159,7 +159,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         android:orientation="vertical"
                         android:gravity="center">
                         <ImageView
-
+                            android:src="@drawable/team1"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             />
@@ -173,7 +173,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Coder"
+                            android:text="Full Stack Developer"
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp">
                         </TextView>
@@ -189,6 +189,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                                 android:layout_marginRight="10dp">
                             </ImageView>
                             <ImageView
+                                android:id="@+id/kierGit"
                                 android:src="@drawable/logo_github"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp">
@@ -215,7 +216,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         android:gravity="center">
 
                         <ImageView
-
+                            android:src="@drawable/team2"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
@@ -272,7 +273,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         android:gravity="center">
 
                         <ImageView
-
+                            android:src="@drawable/team3"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
@@ -288,7 +289,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Coder"
+                            android:text="Backend Developer"
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp">
                         </TextView>
@@ -329,7 +330,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                         android:gravity="center">
 
                         <ImageView
-
+                            android:src="@drawable/team4"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
