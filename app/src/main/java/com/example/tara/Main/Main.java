@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,7 +14,6 @@ import android.widget.Toast;
 
 
 import com.example.tara.Bookings.BookCar;
-import com.example.tara.Bookings.BookedCars;
 import com.example.tara.Host.HostedCars;
 import com.example.tara.LoginRegistration.User;
 import com.example.tara.Profile.ProfileFragmentMenu;
@@ -55,11 +55,9 @@ public class Main extends AppCompatActivity {
         navigation = findViewById(R.id.bottomNavigationView);
         mAuth = FirebaseAuth.getInstance();
 
-
         String databaseLocation = getString(R.string.databasePath);
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference reference =  FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId);
-
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,7 +87,7 @@ public class Main extends AppCompatActivity {
         //switch between bottom menu
         binding.bottomNavigationView.setOnItemSelectedListener(item->{
             switch ((item.getItemId())){
-                case R.id.search:
+                case R.id.explore:
                     replaceFragment(new ExploreFragmentMenu());
                     break;
                 case R.id.bookings:
@@ -98,8 +96,6 @@ public class Main extends AppCompatActivity {
                     else
                         replaceFragment(new BookCar());
                     break;
-                   // replaceFragment(new BookingsFragmentMenu());
-                    //break;
                 case R.id.profile:
                     replaceFragment(new ProfileFragmentMenu());
                     break;
@@ -129,14 +125,12 @@ public class Main extends AppCompatActivity {
                 });
     }
 
-
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);
         fragmentTransaction.commit();
     }
-
 
     @Override
     public void onBackPressed() {

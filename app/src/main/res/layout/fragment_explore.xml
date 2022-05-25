@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:paddingLeft="30dp"
-            android:text="Explore Cars"
+            android:text="Explore"
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5"
             tools:layout_editor_absoluteX="0dp">
 
-            <!--Search button-->
+            Search button
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
