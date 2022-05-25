@@ -1,146 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grayish_blue1"
-    tools:context=".Profile.AboutTara">
+    tools:context=".Profile.AboutTara"
+    android:fillViewport="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/appBar"
-            style="@style/TARA.toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_back_btn"
-            app:title="ABOUT TARA" />
-    </com.google.android.material.appbar.AppBarLayout>
+       <com.google.android.material.appbar.AppBarLayout
+           android:id="@+id/appBarLayout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
 
+           <androidx.appcompat.widget.Toolbar
+               android:id="@+id/appBar"
+               style="@style/TARA.toolbar"
+               android:layout_width="match_parent"
+               android:layout_height="?attr/actionBarSize"
+               app:navigationIcon="@drawable/ic_back_btn"
+               app:title="ABOUT TARA" />
+       </com.google.android.material.appbar.AppBarLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="800dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.0">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tvW"
-                    android:layout_marginLeft="120dp"
-                    android:textAlignment="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="What is TARA"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+           <TextView
+               android:id="@+id/tvW"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="100dp"
+               android:layout_marginRight="100dp"
+               android:textAlignment="center"
+               android:layout_marginTop="25dp"
+               android:fontFamily="@font/poppins_semibold"
+               android:text="What is TARA"
+               android:textColor="@color/dark_blue"
+               android:textSize="25sp"
+               app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="350dp"
-                    android:layout_height="500dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:backgroundTint="@color/light_blue"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+           <com.google.android.material.card.MaterialCardView
+               android:layout_width="match_parent"
+               android:layout_height="500dp"
+               android:layout_marginLeft="30dp"
+               android:layout_marginRight="30dp"
+               android:layout_marginTop="20dp"
+               android:backgroundTint="@color/light_blue"
+               app:cardCornerRadius="15dp"
+               app:cardElevation="12dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:text="TARA is a people-to-people vehicle sharing platform where Guests can rent any vehicle from the TARA community that meets the needs and expectations for their planned and upcoming travels.\n\nTARA envisions a world where people are more connected, mobility is improved,
-and travel is simplified. We strive to assist our guests, particularly someone without a vehicle,
-in filling the gaps in their travel by exploring with any vehicle.
-We also want to provide Hosts the opportunity to increase their income in financing their vehicles
-and their lives while also helping in the improvement of mobility in the Philippines."
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"></TextView>
-                </com.google.android.material.card.MaterialCardView>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginLeft="20dp"
+                       android:layout_marginTop="20dp"
+                       android:layout_marginRight="20dp"
+                       android:text="@string/aboutFirstContent"
+                       android:textAlignment="center"
+                       android:textColor="@color/white"
+                       android:textSize="18sp"/>
+           </com.google.android.material.card.MaterialCardView>
 
 
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
 
-            </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tvWw"
-                android:layout_marginLeft="46dp"
-                android:textAlignment="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="What are the benefits?"
-                android:textColor="@color/dark_blue"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="350dp"
-                android:layout_height="580dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="@color/light_blue"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+               <TextView
+                   android:id="@+id/tvWw"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textAlignment="center"
+                   android:layout_marginTop="25dp"
+                   android:fontFamily="@font/poppins_semibold"
+                   android:text="What are the benefits?"
+                   android:textColor="@color/dark_blue"
+                   android:textSize="25sp"
+                   app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="Find the ideal car for your needs.\n\nFrom dream cars to daily driving, we have a huge selection of 4-wheelers to any occasion.
-Whether its weddings, joyrides around town, road trips, adventures to new places,
-you can rent your desired vehicle at an affordable rate from TARA.\n\nBe sustainable and eco-friendly.\n\nSharing a car eliminates around 11 vehicles from the road, resulting in lower carbon emissions, less pollution, and better air quality. By sharing a car, we are doing ourselves and the planet a favor.\n\nEnhance your quality of life.\n\nTARA's goal is to create improved mobility features with the best vehicle sharing experience ever.
-                                        Share your vehicle as a Host to earn extra income and rent out other host vehicles for any drive.\n\nStrengthen Community Experience\n\nMeet people who share your interests in the TARA vehicle sharing community.
-                                        TARA aspires to create a community that shares the goal of increasing mobility,
-                                        reducing carbon emissions, and creating a better environment for humanity."
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="580dp"
+                   android:layout_marginLeft="30dp"
+                   android:layout_marginRight="30dp"
+                   android:layout_marginTop="20dp"
+                   android:backgroundTint="@color/light_blue"
+                   app:cardCornerRadius="15dp"
+                   app:cardElevation="12dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="13.5sp"></TextView>
-            </com.google.android.material.card.MaterialCardView>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginLeft="20dp"
+                       android:layout_marginTop="20dp"
+                       android:layout_marginRight="20dp"
+                       android:text="@string/aboutSecondContent"
 
-        </LinearLayout>
+                       android:textAlignment="center"
+                       android:textColor="@color/white"
+                       android:textSize="13.5sp"/>
+               </com.google.android.material.card.MaterialCardView>
+
+           </LinearLayout>
 
 
-
-    </ScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+       </LinearLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
