@@ -11,6 +11,15 @@
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_payment.xml" value="0.3625" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_receipt.xml" value="0.3625" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/drawable/ic_email.xml" value="0.1935" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/drawable/ic_host.xml" value="0.1935" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_contact_support.xml" value="0.22" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_signup.xml" value="0.33" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_explore.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/hosted_item.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/main.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/carin/AndroidStudioProjects/TaraRentalApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_about_tara.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_account.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_car_details.xml" value="0.36666666666666664" />
@@ -19,17 +28,12 @@
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_legal.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_payment.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_receipt.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_tax_information.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/car_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment__booked_cars.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_blank.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_book_car.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_explore.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_host.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
