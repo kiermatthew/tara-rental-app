@@ -16,8 +16,8 @@ public class ContactSupport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_support);
 
-        WebView webView=findViewById(R.id.webViewContactSupport);
-        webView.loadUrl("file:///android_asset/contactSupport.html");
+//        WebView webView=findViewById(R.id.webViewContactSupport);
+//        webView.loadUrl("file:///android_asset/contactSupport.html");
 
         getSupportActionBar().hide();
         Toolbar toolbar =  findViewById(R.id.appBar);
