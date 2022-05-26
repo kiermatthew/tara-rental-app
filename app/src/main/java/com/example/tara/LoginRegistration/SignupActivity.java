@@ -80,7 +80,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
-
+//hazel
     public void signInGoogle(){
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent,RC_SIGN_IN);
