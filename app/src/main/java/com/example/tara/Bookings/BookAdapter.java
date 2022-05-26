@@ -1,4 +1,4 @@
-package com.example.tara.Adapter;
+package com.example.tara.Bookings;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.tara.Bookings.BookedCars;
 import com.example.tara.Main.RecyclerViewInterface;
 import com.example.tara.R;
 

@@ -1,9 +1,10 @@
-package com.example.tara.Adapter;
+package com.example.tara.Explore;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.tara.Main.RecyclerViewInterface;
-import com.example.tara.Explore.Car;
 import com.example.tara.R;
 
 import java.util.ArrayList;
