@@ -134,6 +134,7 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
                                 "Candelaria","Castillejos","Iba","Masinloc","Palauig","San Antonio","San Felipe","San Marcelino","San Narciso","Santa Cruz","Subic"};
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -337,6 +338,7 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
         String bmy = brand + " " + model + " " + year;
         String location = address1 + " " + address2 +" " + city + " " + province;
         String municipality = etMunicipality.getText().toString();
+
 
         CarHost carHost = new CarHost(address1,address2,city,postcode,province,year,brand,transmission,
                 drivetrain,seats,type,fuelType,mileage,model,plateNumber,priceRate,description, bmy, location,municipality);

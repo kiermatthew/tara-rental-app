@@ -1,36 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayish_blue1"
-    tools:context=".Profile.HowTaraWorks">
+    android:fillViewport="true"
+    android:background="@color/grayish_blue1">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".Profile.ContactSupport">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/appBar"
-            style="@style/TARA.toolbar"
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_back_btn"
-            app:title="How Tara Works" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <WebView
-        android:id="@+id/webViewHowTaraWorks"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appBar"
+                style="@style/TARA.toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_back_btn"
+                app:title="CONTACT SUPPORT" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Renting"
+            android:textColor="@color/dark_blue"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardY"
+            android:layout_width="match_parent"
+            android:layout_height="520dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Signup"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/firstP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="16sp"
+                    android:text="Please contact us if there is anything wrong with the car or the host.
+We are always available to assist you with rebooking, refunds, and any such issues.\n\nWhen the TARA app isn't working properly, try the following:
+\n\n(1) Make sure you have the most recent version of the program.\n(2) Verify that your internet connection is operational.\n(3) Try restarting or reinstalling the app.\n(4) Login out of your account and then sign back in.\n(5) Verify that location permission is granted.\n\nIf the issue persists, please take a snapshot of the error message, or record your screen and submit it to"
+                    android:textColor="@color/white"/>
+
+
+                <TextView
+                    android:id="@+id/emailTara"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:text="tara.vehiclerentalapp2022@gmail.com"/>
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:text="We may need additional information from you to assist you further."/>
+
+
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/ourTeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Our Team"
+            android:textColor="@color/dark_blue"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardY" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/ourTeam">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:src="@drawable/team1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kier Matthew Encarnacion"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="18sp">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Full Stack Developer"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="18sp">
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:id="@+id/kierFb"
+                                android:src="@drawable/logo_facebook"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginRight="10dp">
+                            </ImageView>
+                            <ImageView
+                                android:id="@+id/kierGit"
+                                android:src="@drawable/logo_github"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp">
+                            </ImageView>
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="12dp"
+                    android:layout_marginLeft="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:src="@drawable/team2"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hazel Anne Caringal"
+                            android:textColor="@color/dark_blue"
+                            android:gravity="center"
+                            android:textSize="18sp">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UI Designer"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="18sp">
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:id="@+id/hazelFb"
+                                android:src="@drawable/logo_facebook"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginRight="10dp">
+                            </ImageView>
+                            <ImageView
+                                android:id="@+id/hazelGit"
+                                android:src="@drawable/logo_github"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp">
+                            </ImageView>
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="12dp"
+                    android:layout_marginLeft="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:src="@drawable/team3"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Renz Brian Matias"
+                            android:textColor="@color/dark_blue"
+                            android:gravity="center"
+                            android:textSize="18sp">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Backend Developer"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="18sp">
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:id="@+id/renzFb"
+                                android:src="@drawable/logo_facebook"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginRight="10dp">
+                            </ImageView>
+                            <ImageView
+                                android:id="@+id/renzGit"
+                                android:src="@drawable/logo_github"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp">
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="12dp"
+                    android:layout_marginLeft="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:src="@drawable/team4"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reycel Castillo"
+                            android:textColor="@color/dark_blue"
+                            android:gravity="center"
+                            android:textSize="18sp">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UI Designer"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="18sp">
+                        </TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <ImageView
+                                android:id="@+id/reycelFb"
+                                android:src="@drawable/logo_facebook"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginRight="10dp">
+                            </ImageView>
+                            <ImageView
+                                android:id="@+id/reycelGit"
+                                android:src="@drawable/logo_github"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp">
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

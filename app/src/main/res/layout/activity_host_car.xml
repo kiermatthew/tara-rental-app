@@ -232,6 +232,7 @@
                 android:background="@drawable/et_background"/>
         </LinearLayout>
 
+
         <TextView
             android:id="@+id/aboutCarHeader"
             android:layout_width="match_parent"
