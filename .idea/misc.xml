@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/drawable/gradient_background.xml" value="0.1665" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/font/poppins.xml" value="0.38666666666666666" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_about_tara.xml" value="0.3625" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_car_details.xml" value="0.3625" />
@@ -18,6 +19,7 @@
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_receipt.xml" value="0.3625" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_renz.xml" value="0.35833333333333334" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_reycel.xml" value="0.34427083333333336" />
+        <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/activity_signup.xml" value="0.2657407407407407" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/fragment_explore.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
         <entry key="..\:/Users/RENZ/AndroidStudioProjects/TARA/app/src/main/res/layout/main.xml" value="0.3625" />
@@ -29,14 +31,12 @@
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_account.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_car_details.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_contact_support.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_get_started.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_host_car.xml" value="0.21944444444444444" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_how_tara_works.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_legal.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_login_signup.xml" value="0.34564102564102567" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_signup.xml" value="0.3490740740740741" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/activity_tax_information.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment__booked_cars.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kierm/AndroidStudioProjects/TaraRentalApp/app/src/main/res/layout/fragment_book_car.xml" value="0.36666666666666664" />

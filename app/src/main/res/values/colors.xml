@@ -16,4 +16,11 @@
     <color name="light_blue">#354562</color>
     <color name="dark_blue">#021638</color>
 
+    <color name="violet">#4530B1</color>
+    <color name="light_violet">#6857D7</color>
+    <color name="blue">#1DBEF5</color>
+    <color name="white1">#EBF2FC</color>
+    <color name="white2">#DBE9F6</color>
+
+
 </resources>
