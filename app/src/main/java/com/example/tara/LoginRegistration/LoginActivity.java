@@ -2,6 +2,7 @@ package com.example.tara.LoginRegistration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,8 +38,9 @@ import com.google.firebase.database.annotations.Nullable;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etEmail, etPassword;
-    private Button loginBtn, loginGoogle;
-    private TextView dontHaveAcc;
+    Button loginBtn ;
+    TextView dontHaveAcc;
+    CardView loginGoogle;
     private FirebaseAuth mAuth;
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;

@@ -6,8 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tara.LoginRegistration.LoginActivity;
-import com.example.tara.LoginRegistration.LoginSignupActivity;
+import com.example.tara.LoginRegistration.GetStarted;
 import com.example.tara.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, LoginSignupActivity.class));
+                startActivity(new Intent(SplashScreen.this, GetStarted.class));
                 finish();
             }
 

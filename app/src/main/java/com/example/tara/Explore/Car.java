@@ -1,16 +1,17 @@
 package com.example.tara.Explore;
 
 public class Car  {
-    public String exterior1Url, bmy, location, priceRate, userId;
+    public String exterior1Url, bmy, location, priceRate, userId,carId;
 
     Car(){ }
 
-    public Car(String exterior1Url, String bmy, String location, String priceRate, String userId){
+    public Car(String exterior1Url, String bmy, String location, String priceRate, String userId, String carId){
         this.exterior1Url = exterior1Url;
         this.bmy = bmy;
         this.location = location;
         this.priceRate = priceRate;
         this.userId = userId;
+        this.carId = carId;
     }
 
 
@@ -52,5 +53,13 @@ public class Car  {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getExterior1Url() {
+        return exterior1Url;
+    }
+
+    public String getCarId() {
+        return carId;
     }
 }

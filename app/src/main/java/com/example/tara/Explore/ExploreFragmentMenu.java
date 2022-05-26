@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.tara.Main.RecyclerViewInterface;
-import com.example.tara.Adapter.CarAdapter;
 import com.example.tara.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,7 +36,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
     String carId, carHostId,search;
     DataSnapshot dataSnapshot;
     SearchView searchView;
-    Boolean isFiltered;
+    Boolean isFiltered = false;
     Query query;
 
     @Override
@@ -46,19 +45,18 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
         View view = inflater.inflate(R.layout.fragment_explore, container, false);
 
         String databaseLocation = getString(R.string.databasePath);
-        isFiltered = false;
-        recyclerView = view.findViewById(R.id.carListRV);
         query = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle");
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        searchView = view.findViewById(R.id.searchView);
+
+        recyclerView = view.findViewById(R.id.carListRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
         filteredList = new ArrayList<>();
-        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
-        searchView = view.findViewById(R.id.searchView);
-        searchView.setFocusable(false);
         myAdapter = new CarAdapter(getContext(),list,this);
         recyclerView.setAdapter(myAdapter);
 
-
+        searchView.setFocusable(false);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -95,6 +93,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
             @Override
             public void onRefresh() {
                 list.clear();
+
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -117,6 +116,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 500);
+
             }
         });
         return view;
@@ -149,8 +149,8 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                             filteredList.add(car);
                         }
                     }
+                    myAdapter.setFilteredList(filteredList);
                 }
-                list = new ArrayList<>(filteredList);
                 myAdapter.notifyDataSetChanged();
             }
             @Override
@@ -162,19 +162,26 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
     @Override
     public void onItemClick(int position) {
         int index  = 0;
-        for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-            if(index == position){
-                DatabaseReference currentReference = childSnapshot.getRef();
-                carId = currentReference.getKey();
-            }
-            for(DataSnapshot childSnapshot2 : childSnapshot.getChildren()){
+        if(!isFiltered){
+            for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
                 if(index == position){
-                    DatabaseReference ref2 = childSnapshot2.getRef();
-                    carHostId = ref2.getKey();
+                    DatabaseReference currentReference = childSnapshot.getRef();
+                    carId = currentReference.getKey();
                 }
+                for(DataSnapshot childSnapshot2 : childSnapshot.getChildren()){
+                    if(index == position){
+                        DatabaseReference ref2 = childSnapshot2.getRef();
+                        carHostId = ref2.getKey();
+                    }
+                }
+                index++;
             }
-            index++;
+        }else{
+            Car newList = filteredList.get(position);
+            carId = newList.getCarId();
+            carHostId = newList.getUserId();
         }
+
         Intent intent = new Intent(getContext(), CarDetails.class);
         intent.putExtra("carId", carId);
         intent.putExtra("carHostId", carHostId);
