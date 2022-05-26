@@ -2,6 +2,7 @@ package com.example.tara.LoginRegistration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,8 +32,6 @@ import com.google.firebase.database.annotations.Nullable;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText etName, etEmail, etPassword, etConfirmPassword;
-    private Button signupBtn,signupGoogle;
-    private TextView alreadyHaveAcc;
     private FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
@@ -47,9 +46,9 @@ public class SignupActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.emailSignup);
         etPassword = findViewById(R.id.passwordSignup);
         etConfirmPassword = findViewById(R.id.confirmPassword);
-        signupBtn = findViewById(R.id.signupBtn);
-        signupGoogle = findViewById(R.id.loginGoogle);
-        alreadyHaveAcc = findViewById(R.id.alreadyHaveAcc);
+        Button signupBtn = findViewById(R.id.signupBtn);
+        CardView signupGoogle = findViewById(R.id.loginGoogle);
+        TextView alreadyHaveAcc = findViewById(R.id.alreadyHaveAcc);
         mAuth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
