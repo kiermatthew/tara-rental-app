@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.TARA" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/black</item> <!--menu selected-->
+        <item name="colorPrimary">@color/dark_blue</item> <!--menu selected-->
         <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorAccent">@color/yellow</item>
