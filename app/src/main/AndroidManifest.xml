@@ -52,7 +52,7 @@
             android:name=".LoginRegistration.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginRegistration.LoginSignupActivity"
+            android:name=".LoginRegistration.GetStarted"
             android:exported="false" />
         <activity
             android:name=".Main.Main"
