@@ -1,4 +1,4 @@
-package com.example.tara.Adapter;
+package com.example.tara.Host;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.tara.Main.RecyclerViewInterface;
 
-import com.example.tara.Host.Vehicle;
 import com.example.tara.R;
 
 import java.util.ArrayList;

@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tara.Adapter.VehicleAdapter;
 import com.example.tara.Main.RecyclerViewInterface;
 import com.example.tara.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

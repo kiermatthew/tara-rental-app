@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tara.Adapter.LoadingDialog;
 import com.example.tara.Bookings.BookedCars;
 import com.example.tara.R;
 import com.google.android.gms.tasks.OnCompleteListener;
