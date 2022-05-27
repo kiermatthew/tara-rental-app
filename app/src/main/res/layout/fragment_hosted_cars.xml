@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Host.HostedCars"
+    tools:context=".Host.CarHostedFragment"
     android:background="@color/grayish_blue1"
     android:fillViewport="true">
 

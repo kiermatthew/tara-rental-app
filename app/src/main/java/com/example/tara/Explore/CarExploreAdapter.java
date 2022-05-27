@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ import com.example.tara.R;
 
 import java.util.ArrayList;
 
-public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder>{
+public class CarExploreAdapter extends RecyclerView.Adapter<CarExploreAdapter.MyViewHolder>{
     private final RecyclerViewInterface recyclerViewInterface;
     private final int lastPosition = -1;
     Context context;
@@ -29,7 +28,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.MyViewHolder>{
         notifyDataSetChanged();
     }
 
-    public CarAdapter(Context context, ArrayList<Car> list, RecyclerViewInterface recyclerViewInterface) {
+    public CarExploreAdapter(Context context, ArrayList<Car> list, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.list = list;
         this.recyclerViewInterface = recyclerViewInterface;

@@ -17,14 +17,14 @@ import com.example.tara.R;
 
 import java.util.ArrayList;
 
-public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.MyViewHolder>{
+public class CarHostedAdapter extends RecyclerView.Adapter<CarHostedAdapter.MyViewHolder>{
     private final RecyclerViewInterface recyclerViewInterface;
     private final int lastPosition = -1;
     Context context;
 
-    ArrayList<Vehicle> list;
+    ArrayList<CarHosted> list;
 
-    public VehicleAdapter(Context context, ArrayList<Vehicle> list, RecyclerViewInterface recyclerViewInterface) {
+    public CarHostedAdapter(Context context, ArrayList<CarHosted> list, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.list = list;
         this.recyclerViewInterface = recyclerViewInterface;
@@ -39,10 +39,10 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Vehicle vehicle = list.get(position);
-        holder.bmy.setText(vehicle.getBmy());
-        holder.plateNumber.setText(vehicle.getPlateNumber());
-        Glide.with(holder.carImage.getContext()).load(vehicle.getCarUrl()).into(holder.carImage);
+        CarHosted carHosted = list.get(position);
+        holder.bmy.setText(carHosted.getBmy());
+        holder.plateNumber.setText(carHosted.getPlateNumber());
+        Glide.with(holder.carImage.getContext()).load(carHosted.getCarUrl()).into(holder.carImage);
     }
 
     @Override

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,15 +12,14 @@ import android.view.View;
 import android.widget.Toast;
 
 
-import com.example.tara.Bookings.BookCar;
-import com.example.tara.Host.HostedCars;
+import com.example.tara.Bookings.BookCarIntro;
+import com.example.tara.Host.CarHostedFragment;
 import com.example.tara.LoginRegistration.User;
 import com.example.tara.Profile.ProfileFragmentMenu;
 import com.example.tara.Explore.ExploreFragmentMenu;
 import com.example.tara.Host.HostFragmentMenu;
 import com.example.tara.Bookings.BookingsFragmentMenu;
 import com.example.tara.R;
-import com.example.tara.databinding.MainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -94,14 +92,14 @@ public class Main extends AppCompatActivity {
                     if(bookedCar)
                         replaceFragment(new BookingsFragmentMenu());
                     else
-                        replaceFragment(new BookCar());
+                        replaceFragment(new BookCarIntro());
                     break;
                 case R.id.profile:
                     replaceFragment(new ProfileFragmentMenu());
                     break;
                 case R.id.host:
                     if(isHost)
-                        replaceFragment(new HostedCars());
+                        replaceFragment(new CarHostedFragment());
                     else
                         replaceFragment(new HostFragmentMenu());
                     break;

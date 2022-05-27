@@ -1,11 +1,11 @@
 package com.example.tara.Host;
 
-public class Vehicle {
+public class CarHosted {
     public String bmy, plateNumber, exterior1Url;
 
-    Vehicle(){ }
+    CarHosted(){ }
 
-    public Vehicle(String bmy, String plateNumber, String exterior1Url) {
+    public CarHosted(String bmy, String plateNumber, String exterior1Url) {
         this.bmy = bmy;
         this.plateNumber = plateNumber;
         this.exterior1Url = exterior1Url;

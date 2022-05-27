@@ -28,12 +28,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 //displays all the users host cars
-public class HostedCars extends Fragment implements RecyclerViewInterface {
+public class CarHostedFragment extends Fragment implements RecyclerViewInterface {
 
     DatabaseReference databaseReference;
     RecyclerView recyclerView;
-    ArrayList<Vehicle> list;
-    VehicleAdapter adapter;
+    ArrayList<CarHosted> list;
+    CarHostedAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
     String uId;
     DataSnapshot dataSnapshot;
@@ -49,7 +49,7 @@ public class HostedCars extends Fragment implements RecyclerViewInterface {
         recyclerView = view.findViewById(R.id.vehicleRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
-        adapter = new VehicleAdapter(getContext(),list,this);
+        adapter = new CarHostedAdapter(getContext(),list,this);
         recyclerView.setAdapter(adapter);
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshVH);
 
@@ -74,8 +74,8 @@ public class HostedCars extends Fragment implements RecyclerViewInterface {
                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                         String checkId = dataSnapshot1.getKey();
                         if(checkId.equals(userId)){
-                            Vehicle vehicle = dataSnapshot1.getValue(Vehicle.class);
-                            list.add(vehicle);
+                            CarHosted carHosted = dataSnapshot1.getValue(CarHosted.class);
+                            list.add(carHosted);
                         }
                     }
                 }
@@ -105,8 +105,8 @@ public class HostedCars extends Fragment implements RecyclerViewInterface {
                                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                                         String checkId = dataSnapshot1.getKey();
                                         if(checkId.equals(userId)){
-                                            Vehicle vehicle = dataSnapshot1.getValue(Vehicle.class);
-                                            list.add(vehicle);
+                                            CarHosted carHosted = dataSnapshot1.getValue(CarHosted.class);
+                                            list.add(carHosted);
                                         }
                                     }
                                 }

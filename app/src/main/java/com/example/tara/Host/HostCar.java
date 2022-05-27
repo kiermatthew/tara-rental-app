@@ -134,7 +134,6 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
                                 "Candelaria","Castillejos","Iba","Masinloc","Palauig","San Antonio","San Felipe","San Marcelino","San Narciso","Santa Cruz","Subic"};
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -338,10 +337,20 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
         String bmy = brand + " " + model + " " + year;
         String location = address1 + " " + address2 +" " + city + " " + province;
         String municipality = etMunicipality.getText().toString();
+        carId = vehicleReference.push().getKey();
+        assert carId != null;
 
+        CarInformation carInformation = new CarInformation(address1,address2,city,postcode,province,year,brand,transmission,
+                drivetrain,seats,type,fuelType,mileage,model,plateNumber,priceRate,description, bmy, location,municipality,carId, userId);
 
-        CarHost carHost = new CarHost(address1,address2,city,postcode,province,year,brand,transmission,
-                drivetrain,seats,type,fuelType,mileage,model,plateNumber,priceRate,description, bmy, location,municipality);
+        vehicleReference.child(carId).child(userId).setValue(carInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Intent intent = new Intent(HostCar.this, Main.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         userReference.child(userId).child("isHost").setValue(true).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -351,18 +360,6 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(HostCar.this,"Something went wrong, try again",Toast.LENGTH_LONG).show();
-            }
-        });
-
-        carId = vehicleReference.push().getKey();
-        assert carId != null;
-        vehicleReference.child(carId).child(userId)
-                .setValue(carHost).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Intent intent = new Intent(HostCar.this, Main.class);
-                startActivity(intent);
-                finish();
             }
         });
     }
