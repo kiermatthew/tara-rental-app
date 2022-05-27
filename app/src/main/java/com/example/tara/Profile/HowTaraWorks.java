@@ -16,6 +16,8 @@ public class HowTaraWorks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_tara_works);
 
+        //comment
+
 
 
 
