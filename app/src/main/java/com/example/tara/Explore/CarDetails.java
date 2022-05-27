@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.tara.Main.MessageDialog;
 import com.example.tara.Main.PaymentActivity;
 import com.example.tara.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +37,7 @@ public class CarDetails extends AppCompatActivity {
     Button bookBtn;
     DataSnapshot dataSnapshot, child;
     FirebaseAuth mAuth;
-    Boolean alreadyBooked = false;
+    Boolean alreadyBooked = false, isVerified = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,15 +75,35 @@ public class CarDetails extends AppCompatActivity {
         bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(CarDetails.this, PaymentActivity.class);
-               intent.putExtra("price",price);
-               intent.putExtra("carId", carId);
-               intent.putExtra("carHostId", carHostId);
-               intent.putExtra("carHostName",carHostName);
-               intent.putExtra("bmy",passBmy);
-               intent.putExtra("location",passLocation);
-               intent.putExtra("carImageUrl",passImageUrl);
-               startActivity(intent);
+                if(isVerified){
+                    Intent intent = new Intent(CarDetails.this, PaymentActivity.class);
+                    intent.putExtra("price",price);
+                    intent.putExtra("carId", carId);
+                    intent.putExtra("carHostId", carHostId);
+                    intent.putExtra("carHostName",carHostName);
+                    intent.putExtra("bmy",passBmy);
+                    intent.putExtra("location",passLocation);
+                    intent.putExtra("carImageUrl",passImageUrl);
+                    startActivity(intent);
+                }
+                else{
+                    MessageDialog loadingDialog = new MessageDialog(CarDetails.this);
+                    loadingDialog.startLoadingDialog();
+                }
+
+
+            }
+        });
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Boolean verified = (Boolean) snapshot.child("isVerified").getValue();
+                isVerified = verified;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 

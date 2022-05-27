@@ -1,6 +1,10 @@
 package com.example.tara.Profile;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,15 +21,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
-import com.example.tara.LoginRegistration.LoginActivity;
-import com.example.tara.LoginRegistration.User;
+import com.example.tara.LoginSignup.LoginActivity;
+import com.example.tara.LoginSignup.User;
 import com.example.tara.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,17 +37,19 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragmentMenu extends Fragment {
 
-    private TextView tvAccount,logoutBtn,tvUserName, tvAboutTara, tvHowTaraWorks, tvContactSupport, tvLegal;
-    private ImageView ivPhoto1;
+    TextView tvAccount,logoutBtn,tvUserName, tvAboutTara, tvHowTaraWorks, tvContactSupport, tvLegal, verifyStatus;
+    ImageView ivPhoto1;
     GoogleSignInAccount signInAccount;
-    String databaseLocation;
+    String databaseLocation, userId;
     FirebaseAuth mAuth;
     GoogleSignInClient gSignIn;
-    DatabaseReference databaseReference;
+    DatabaseReference userRef;
     LinearLayout profileBtn;
+    Boolean isVerified = false;
 
     //commentdsadsa
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,17 +65,23 @@ public class ProfileFragmentMenu extends Fragment {
         tvUserName = view.findViewById(R.id.userName);
         ivPhoto1 = view.findViewById(R.id.userPhoto);
         profileBtn = view.findViewById(R.id.profileBtn);
+        verifyStatus = view.findViewById(R.id.verificationStatus);
         signInAccount = GoogleSignIn.getLastSignedInAccount(getContext());
         databaseLocation = getString(R.string.databasePath);
         mAuth = FirebaseAuth.getInstance();
         gSignIn = GoogleSignIn.getClient(getActivity(), new GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build());
 
-
         //fetch data from database
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        FirebaseDatabase database = FirebaseDatabase.getInstance(databaseLocation);
-        databaseReference = database.getReference("users").child(currentUser.getUid());
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        userRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
+
+
+
+        if(isVerified){
+            verifyStatus.setText("Verified");
+        }else
+            verifyStatus.setText("Not Verified");
 
         tvAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +128,6 @@ public class ProfileFragmentMenu extends Fragment {
         });
 
 
-
         //if gmail account is signed in
         if(signInAccount != null){
             Uri photoUrl = signInAccount.getPhotoUrl();
@@ -127,10 +137,14 @@ public class ProfileFragmentMenu extends Fragment {
         else
             ivPhoto1.setImageResource(R.drawable.ic_profile_image);
 
-        //detect changes in database and updates data
-        databaseReference.addValueEventListener(new ValueEventListener() {
+
+        userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(getActivity()==null){
+                    return;
+                }
+                isVerified = (Boolean) snapshot.child("isVerified").getValue();
                 User user =  snapshot.getValue(User.class);
                 //display name nad profile picture
                 if(user!=null){
@@ -145,6 +159,14 @@ public class ProfileFragmentMenu extends Fragment {
                 else {
                     Toast.makeText(getContext(),"Error retrieving info",Toast.LENGTH_LONG).show();
                 }
+                if(isVerified){
+                    verifyStatus.setText("Verified");
+                    verifyStatus.setTextColor(Color.parseColor("#58b996"));
+                    verifyStatus.getBackground().setColorFilter(getResources().getColor(R.color.green2),
+                            PorterDuff.Mode.SRC_ATOP);
+                }
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -154,12 +176,6 @@ public class ProfileFragmentMenu extends Fragment {
         return view;
     }
 
-    private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,fragment);
-        fragmentTransaction.commit();
-    }
 
     private void logoutUser(){
         mAuth.getInstance().signOut();

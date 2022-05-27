@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.tara.Bookings.BookCarIntro;
 import com.example.tara.Host.CarHostedFragment;
-import com.example.tara.LoginRegistration.User;
+import com.example.tara.LoginSignup.User;
 import com.example.tara.Profile.ProfileFragmentMenu;
 import com.example.tara.Explore.ExploreFragmentMenu;
 import com.example.tara.Host.HostFragmentMenu;

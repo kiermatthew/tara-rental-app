@@ -6,7 +6,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tara.LoginRegistration.GetStarted;
+import com.example.tara.LoginSignup.GetStarted;
 import com.example.tara.R;
 
 public class SplashScreen extends AppCompatActivity {
