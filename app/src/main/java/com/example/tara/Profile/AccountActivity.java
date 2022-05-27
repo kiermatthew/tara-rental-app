@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.tara.LoginRegistration.GetStarted;
+import com.example.tara.LoginRegistration.LoginActivity;
 import com.example.tara.LoginRegistration.User;
 import com.example.tara.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -44,9 +46,9 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class AccountActivity extends AppCompatActivity {
+public class  AccountActivity extends AppCompatActivity {
     private LinearLayout llName, llEmail, llPassword;
-    private TextView tvName, tvEmail, tvPassword;
+    private TextView tvName, tvEmail, tvPassword, verifyAccountBtn;
     private TextView tvEditName;
     private ImageView ivEditPhoto;
     private Button saveChangesBtn;
@@ -76,6 +78,7 @@ public class AccountActivity extends AppCompatActivity {
         ivEditPhoto = findViewById(R.id.editPhoto);
         tvEditName = findViewById(R.id.editName);
         saveChangesBtn = findViewById(R.id.saveChangesBtn);
+        verifyAccountBtn = findViewById(R.id.verifyAccountBtn);
         resetPasswordAccount = findViewById(R.id.resetPasswordLocal);
         signInAccount = GoogleSignIn.getLastSignedInAccount(this);
 
@@ -122,6 +125,13 @@ public class AccountActivity extends AppCompatActivity {
                 });
 
                 passwordResetDialog.create().show();
+            }
+        });
+
+        verifyAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AccountActivity.this, AccountVerification.class));
             }
         });
 

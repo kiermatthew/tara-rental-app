@@ -20,6 +20,7 @@ import com.example.tara.Explore.ExploreFragmentMenu;
 import com.example.tara.Host.HostFragmentMenu;
 import com.example.tara.Bookings.BookingsFragmentMenu;
 import com.example.tara.R;
+import com.example.tara.databinding.MainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

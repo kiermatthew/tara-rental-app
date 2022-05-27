@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TARA">
         <activity
+            android:name=".Profile.AccountVerification"
+            android:exported="false" />
+        <activity
             android:name=".Main.ReceiptActivity"
             android:exported="false" />
         <activity
