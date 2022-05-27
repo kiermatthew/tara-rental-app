@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/grayish_blue1">
+    android:background="@drawable/gradient_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Renting"
-            android:textColor="@color/dark_blue"
+            android:text="We are here for you always."
+            android:textColor="@color/dark_blue1"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            app:cardBackgroundColor="@color/dark_blue"
+            app:cardBackgroundColor="@color/violet"
             app:cardCornerRadius="15dp"
             app:cardElevation="12dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,15 +67,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Signup"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/firstP"
@@ -108,7 +99,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:textSize="16sp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white1"
                     android:text="We may need additional information from you to assist you further."/>
 
 
@@ -125,7 +116,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
             android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Our Team"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/dark_blue1"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
