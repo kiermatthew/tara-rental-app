@@ -5,18 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayish_blue1"
+    android:background="@drawable/gradient_background"
     tools:context=".Host.HostFragmentMenu">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Become a host"
-        android:textSize="25dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:textSize="40dp"
+        android:textColor="@color/dark_blue1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +33,12 @@
     <Button
         android:id="@+id/hostBtn"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginBottom="44dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="SHARE MY VEHICLE"
+        android:textSize="18sp"
+        android:background="@drawable/btn_violet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
