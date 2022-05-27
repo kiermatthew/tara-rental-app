@@ -153,6 +153,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
             app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -163,8 +164,7 @@
                 android:layout_margin="5dp"
                 android:background="@color/white"
                 android:src="@drawable/ic_google"
-                >
-            </ImageView>
+                />
 
         </androidx.cardview.widget.CardView>
 

@@ -30,7 +30,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
 
     RecyclerView recyclerView;
     DatabaseReference database;
-    CarAdapter myAdapter;
+    CarExploreAdapter myAdapter;
     ArrayList<Car> list, filteredList;
     SwipeRefreshLayout swipeRefreshLayout;
     String carId, carHostId,search;
@@ -53,7 +53,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<>();
         filteredList = new ArrayList<>();
-        myAdapter = new CarAdapter(getContext(),list,this);
+        myAdapter = new CarExploreAdapter(getContext(),list,this);
         recyclerView.setAdapter(myAdapter);
 
         searchView.setFocusable(false);
@@ -130,21 +130,8 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                 filteredList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        String city = dataSnapshot1.child("city").getValue().toString();
-                        String province = dataSnapshot1.child("province").getValue().toString();
-                        String street = dataSnapshot1.child("address1").getValue().toString();
-                        String barangay = dataSnapshot1.child("address2").getValue().toString();
-
-                        if (city.toLowerCase().contains(newText.toLowerCase())) {
-                            Car car = dataSnapshot1.getValue(Car.class);
-                            filteredList.add(car);
-                        } else if (province.toLowerCase().contains(newText.toLowerCase())) {
-                            Car car = dataSnapshot1.getValue(Car.class);
-                            filteredList.add(car);
-                        } else if (street.toLowerCase().contains(newText.toLowerCase())) {
-                            Car car = dataSnapshot1.getValue(Car.class);
-                            filteredList.add(car);
-                        } else if (barangay.toLowerCase().contains(newText.toLowerCase())) {
+                        String location = dataSnapshot1.child("location").getValue().toString();
+                        if (location.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
                         }
