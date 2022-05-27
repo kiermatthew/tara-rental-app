@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayish_blue1"
+    android:background="@drawable/gradient_background"
     tools:context=".Profile.ProfileFragmentMenu">
 
 
@@ -41,15 +41,37 @@
             </androidx.cardview.widget.CardView>
 
 <!--            Name-->
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="center"/>
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User's Full Name"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/verificationStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not verified"
+                    android:textStyle="bold"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/red"
+                    android:background="@drawable/btn_login_signup"
+                    android:backgroundTint="@color/red2"/>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -68,15 +90,12 @@
                 android:text="Account"
                 android:textSize="17sp"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:drawablePadding="10dp"
                 app:drawableLeftCompat="@drawable/ic_profile" />
-
-
-
-
 
             <TextView
                 android:id="@+id/aboutTaraBtn"
@@ -84,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="About TARA"
                 android:textSize="17sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
@@ -97,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:text="How TARA works"
                 android:textSize="17sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
@@ -113,6 +134,7 @@
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:text="Contact support"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 app:drawableLeftCompat="@drawable/ic_contact_support" />
@@ -123,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="Legal"
                 android:textSize="17sp"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:paddingLeft="30dp"
                 android:paddingTop="15dp"
@@ -137,6 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log out"
+            android:textStyle="bold"
             android:textSize="17sp"
             android:textColor="@color/black"
             android:paddingLeft="30dp"

@@ -78,7 +78,7 @@ public class PaymentActivity extends AppCompatActivity {
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadingDialog.startLoadingDialog();
+                loadingDialog.startLoadingDialog("Processing payment");
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override

@@ -559,6 +559,44 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
         super.onActivityResult(requestCode, resultCode, data);
 
         //if image is selected based on the code, display the image
+        if(requestCode==9 && resultCode== -1 && data != null && data.getData() != null){
+            exterior1Uri = data.getData();
+            ivExterior1.setImageURI(exterior1Uri);
+            cvExterior1.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==10 && resultCode== -1 && data != null && data.getData() != null){
+            exterior2Uri = data.getData();
+            ivExterior2.setImageURI(exterior2Uri);
+            cvExterior2.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==11 && resultCode== -1 && data != null && data.getData() != null){
+            exterior3Uri = data.getData();
+            ivExterior3.setImageURI(exterior3Uri);
+            cvExterior3.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==12 && resultCode== -1 && data != null && data.getData() != null){
+            exterior4Uri = data.getData();
+            ivExterior4.setImageURI(exterior4Uri);
+        }
+        if(requestCode==13 && resultCode== -1 && data != null && data.getData() != null){
+            interior1Uri = data.getData();
+            ivInterior1.setImageURI(interior1Uri);
+            cvInterior1.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==14 && resultCode== -1 && data != null && data.getData() != null){
+            interior2Uri = data.getData();
+            ivInterior2.setImageURI(interior2Uri);
+            cvInterior2.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==15 && resultCode== -1 && data != null && data.getData() != null){
+            interior3Uri = data.getData();
+            ivInterior3.setImageURI(interior3Uri);
+            cvInterior3.setVisibility(View.VISIBLE);
+        }
+        if(requestCode==16 && resultCode== -1 && data != null && data.getData() != null){
+            interior4Uri = data.getData();
+            ivInterior4.setImageURI(interior4Uri);
+        }
         if(requestCode==1 && resultCode== -1 && data != null && data.getData() != null){
             carGrant1Uri = data.getData();
             ivCarGrant1.setImageURI(carGrant1Uri);
@@ -598,44 +636,7 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
             roadTax4Uri = data.getData();
             ivRoadTax4.setImageURI(roadTax4Uri);
         }
-        if(requestCode==9 && resultCode== -1 && data != null && data.getData() != null){
-            exterior1Uri = data.getData();
-            ivExterior1.setImageURI(exterior1Uri);
-            cvExterior1.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==10 && resultCode== -1 && data != null && data.getData() != null){
-            exterior2Uri = data.getData();
-            ivExterior2.setImageURI(exterior2Uri);
-            cvExterior2.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==11 && resultCode== -1 && data != null && data.getData() != null){
-            exterior3Uri = data.getData();
-            ivExterior3.setImageURI(exterior3Uri);
-            cvExterior3.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==12 && resultCode== -1 && data != null && data.getData() != null){
-            exterior4Uri = data.getData();
-            ivExterior4.setImageURI(exterior4Uri);
-        }
-        if(requestCode==13 && resultCode== -1 && data != null && data.getData() != null){
-            interior1Uri = data.getData();
-            ivInterior1.setImageURI(interior1Uri);
-            cvInterior1.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==14 && resultCode== -1 && data != null && data.getData() != null){
-            interior2Uri = data.getData();
-            ivInterior2.setImageURI(interior2Uri);
-            cvInterior2.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==15 && resultCode== -1 && data != null && data.getData() != null){
-            interior3Uri = data.getData();
-            ivInterior3.setImageURI(interior3Uri);
-            cvInterior3.setVisibility(View.VISIBLE);
-        }
-        if(requestCode==16 && resultCode== -1 && data != null && data.getData() != null){
-            interior4Uri = data.getData();
-            ivInterior4.setImageURI(interior4Uri);
-        }
+
         if (requestCode == 17 && resultCode == -1 && data != null && data.getData() != null) {
             insurance1Uri = data.getData();
             ivInsurance1.setImageURI(insurance1Uri);

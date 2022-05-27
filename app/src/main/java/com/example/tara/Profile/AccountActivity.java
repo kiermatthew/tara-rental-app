@@ -5,10 +5,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +21,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.tara.LoginRegistration.GetStarted;
-import com.example.tara.LoginRegistration.LoginActivity;
-import com.example.tara.LoginRegistration.User;
+import com.example.tara.LoginSignup.User;
+import com.example.tara.Main.LoadingDialog;
+import com.example.tara.Main.ResetDialog;
 import com.example.tara.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -54,12 +55,13 @@ public class  AccountActivity extends AppCompatActivity {
     private Button saveChangesBtn;
     GoogleSignInAccount signInAccount;
     StorageReference storageReference;
-    DatabaseReference Databasereference;
+    DatabaseReference userRef;
     String databaseLocation;
     Uri imageUri;
     FirebaseUser currentUser;
     TextView resetPasswordAccount;
     FirebaseAuth auth;
+    Boolean isVerified = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,58 +84,55 @@ public class  AccountActivity extends AppCompatActivity {
         resetPasswordAccount = findViewById(R.id.resetPasswordLocal);
         signInAccount = GoogleSignIn.getLastSignedInAccount(this);
 
-
         auth = FirebaseAuth.getInstance();
         currentUser = auth.getCurrentUser();
         FirebaseDatabase database = FirebaseDatabase.getInstance(databaseLocation);
-        Databasereference = database.getReference("users").child(currentUser.getUid());
+        userRef = database.getReference("users").child(currentUser.getUid());
 
 
-        resetPasswordAccount.setOnClickListener(new View.OnClickListener() {
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if(signInAccount != null){
+            Uri photoUrl = signInAccount.getPhotoUrl();
+            tvEditName.setText(signInAccount.getDisplayName());
+            tvName.setText(signInAccount.getDisplayName());
+            tvEmail.setText(signInAccount.getEmail());
+            Glide.with(this).load(photoUrl).into(ivEditPhoto);
+        }
+        else
+            ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint({"ResourceAsColor", "SetTextI18n"})
             @Override
-            public void onClick(View view) {
-                EditText resetMail = new EditText(view.getContext());
-                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(view.getContext());
-                passwordResetDialog.setTitle("Reset Password?");
-                passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
-                passwordResetDialog.setView(resetMail);
-
-                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        //extract the email link
-                        String mail = resetMail.getText().toString();
-                        auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Toast.makeText(AccountActivity.this, "Reset Link Sent to Your Email.", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(AccountActivity.this,  "This Account is not yet Registered", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() && snapshot.getChildrenCount() > 0){
+                    User user =  snapshot.getValue(User.class);
+                    assert user != null;
+                    if(!user.imageUrl.isEmpty()){
+                        tvName.setText(snapshot.child("name").getValue().toString());
+                        tvEmail.setText(snapshot.child("email").getValue().toString());
+                        String imageUrl = snapshot.child("imageUrl").getValue().toString();
+                        Glide.with(AccountActivity.this).load(imageUrl).into(ivEditPhoto);
                     }
-                });
-                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                passwordResetDialog.create().show();
+                    else
+                        ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+                    tvEditName.setText(snapshot.child("name").getValue().toString());
+                }
+                else {
+                    Toast.makeText(AccountActivity.this,"Error retrieving info",Toast.LENGTH_LONG).show();
+                }
+                isVerified = (Boolean) snapshot.child("isVerified").getValue();
+                if(isVerified){
+                    verifyAccountBtn.setClickable(false);
+                    verifyAccountBtn.setText("Verified");
+                    verifyAccountBtn.setTextColor(Color.parseColor("#58b996"));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
 
-        verifyAccountBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AccountActivity.this, AccountVerification.class));
-            }
-        });
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,33 +148,58 @@ public class  AccountActivity extends AppCompatActivity {
             }
         });
 
-        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
-        if (signInAccount != null) {
-            tvName.setText(signInAccount.getDisplayName());
-            tvEmail.setText(signInAccount.getEmail());
-        }
-
-
-        Databasereference.addValueEventListener(new ValueEventListener() {
+        resetPasswordAccount.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
-                if (user != null) {
-                    //display user info
-                    Glide.with(AccountActivity.this).load(user.imageUrl).into(ivEditPhoto);
-                    tvName.setText(user.name);
-                    tvEmail.setText(user.email);
-                } else {
-                    Toast.makeText(AccountActivity.this, "Error retrieving info", Toast.LENGTH_LONG).show();
-                }
-            }
+            public void onClick(View view) {
+                EditText resetMail = new EditText(view.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(view.getContext());
+                passwordResetDialog.setTitle("Reset Password?");
+                passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
+                passwordResetDialog.setView(resetMail);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //extract the email link
+                        String mail = resetMail.getText().toString();
 
+                            auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(AccountActivity.this, "Reset Link Sent to Your Email.", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(AccountActivity.this, "This Account is not yet Registered", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+
+                    }
+                });
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                passwordResetDialog.create().show();
+//                ResetDialog dialog = new ResetDialog(AccountActivity.this);
+//                dialog.startLoadingDialog();
             }
         });
+
+        verifyAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AccountActivity.this, AccountVerification.class));
+            }
+        });
+
     }/*End*/
+
     private void selectImage() {
         Intent galleryIntent = new Intent();
         galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
@@ -190,6 +214,7 @@ public class  AccountActivity extends AppCompatActivity {
         if(requestCode==2 && resultCode== -1 && data != null){
             imageUri = data.getData();
             ivEditPhoto.setImageURI(imageUri);
+            Glide.with(this).load(imageUri).into(ivEditPhoto);
             saveChangesBtn.setVisibility(View.VISIBLE);
             saveChangesBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -197,42 +222,8 @@ public class  AccountActivity extends AppCompatActivity {
                     uploadImage();
                 }
             });
-
-            if(signInAccount != null){
-                Uri photoUrl = signInAccount.getPhotoUrl();
-                tvEditName.setText(signInAccount.getDisplayName());
-                Glide.with(this).load(photoUrl).into(ivEditPhoto);
             }
-            else
-                ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
-
-                Databasereference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists() && snapshot.getChildrenCount() > 0){
-                            User user =  snapshot.getValue(User.class);
-                            assert user != null;
-                            if(!user.imageUrl.isEmpty()){
-                                String imageUrl = snapshot.child("imageUrl").getValue().toString();
-                                Glide.with(AccountActivity.this).load(imageUrl).into(ivEditPhoto);
-                            }
-                            else
-                                ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
-                            tvEditName.setText(snapshot.child("name").getValue().toString());
-                        }
-                        else {
-                            Toast.makeText(AccountActivity.this,"Error retrieving info",Toast.LENGTH_LONG).show();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                    }
-                });
-
-
-
-            }
-        }
+    }
 
         // upload the image to the cloud storage
         private void uploadImage(){
@@ -240,22 +231,19 @@ public class  AccountActivity extends AppCompatActivity {
             Date now = new Date();
             String fileName = formatter.format(now);
 
-            ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Updating profile picture");
-            progressDialog.setMessage("Please wait, we are setting your picture");
-            progressDialog.show();
-
+            LoadingDialog loadingDialog = new LoadingDialog(AccountActivity.this);
+            loadingDialog.startLoadingDialog("Uploading photo");
             storageReference = FirebaseStorage.getInstance("gs://tara-351111.appspot.com/").getReference("profile/"+fileName);
             storageReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    progressDialog.dismiss();
+                    loadingDialog.dismissDialog();
                     taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                         // gets the image url and store it in the database
                         @Override
                         public void onComplete(@NonNull Task<Uri> task) {
                             String imageUrl = task.getResult().toString();
-                            Databasereference.child("imageUrl").setValue(imageUrl);
+                            userRef.child("imageUrl").setValue(imageUrl);
                         }
                     });
                 }
