@@ -183,6 +183,7 @@ We are always available to assist you with rebooking, refunds, and any such issu
                             android:orientation="horizontal"
                             >
                             <ImageView
+                                android:id="@+id/kierFb"
                                 android:src="@drawable/logo_facebook"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
@@ -242,12 +243,14 @@ We are always available to assist you with rebooking, refunds, and any such issu
                             android:orientation="horizontal"
                             >
                             <ImageView
+                                android:id="@+id/hazelFb"
                                 android:src="@drawable/logo_facebook"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginRight="10dp">
                             </ImageView>
                             <ImageView
+                                android:id="@+id/hazelGit"
                                 android:src="@drawable/logo_github"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp">
@@ -299,12 +302,14 @@ We are always available to assist you with rebooking, refunds, and any such issu
                             android:orientation="horizontal"
                             >
                             <ImageView
+                                android:id="@+id/renzFb"
                                 android:src="@drawable/logo_facebook"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginRight="10dp">
                             </ImageView>
                             <ImageView
+                                android:id="@+id/renzGit"
                                 android:src="@drawable/logo_github"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp">
@@ -356,12 +361,14 @@ We are always available to assist you with rebooking, refunds, and any such issu
                             android:orientation="horizontal"
                             >
                             <ImageView
+                                android:id="@+id/reycelFb"
                                 android:src="@drawable/logo_facebook"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_marginRight="10dp">
                             </ImageView>
                             <ImageView
+                                android:id="@+id/reycelGit"
                                 android:src="@drawable/logo_github"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp">

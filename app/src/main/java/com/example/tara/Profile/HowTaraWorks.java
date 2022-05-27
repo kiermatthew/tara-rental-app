@@ -16,9 +16,7 @@ public class HowTaraWorks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_tara_works);
 
-        WebView webView = findViewById(R.id.webViewHowTaraWorks);
-        webView.loadUrl("file:///android_asset/howTaraWorks.html");
-        webView.getSettings().setJavaScriptEnabled(true);
+
 
 
         getSupportActionBar().hide();
