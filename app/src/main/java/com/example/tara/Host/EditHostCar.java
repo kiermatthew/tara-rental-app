@@ -340,10 +340,10 @@ public class EditHostCar extends AppCompatActivity implements View.OnClickListen
         carId = vehicleReference.push().getKey();
         assert carId != null;
 
-        CarInformation carInformation = new CarInformation(address1,address2,city,postcode,province,year,brand,transmission,
+        CarInfo carInfo = new CarInfo(address1,address2,city,postcode,province,year,brand,transmission,
                 drivetrain,seats,type,fuelType,mileage,model,plateNumber,priceRate,description, bmy, location,municipality,carId, userId);
 
-        vehicleReference.child(carId).child(userId).setValue(carInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
+        vehicleReference.child(carId).child(userId).setValue(carInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Intent intent = new Intent(EditHostCar.this, Main.class);

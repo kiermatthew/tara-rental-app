@@ -36,7 +36,7 @@ public class BookDetails extends AppCompatActivity {
             tvType, tvFuelType, tvMileage, tvDescription, hostName,tvPriceRate2;
     ImageView hostPic;
     Button bookBtn;
-    DataSnapshot dataSnapshot, child;
+    DataSnapshot dataSnapshot;
     FirebaseAuth mAuth;
     Boolean alreadyBooked = false, isVerified = false;
 
@@ -69,6 +69,7 @@ public class BookDetails extends AppCompatActivity {
         hostPic = findViewById(R.id.ivHostBook);
         bookBtn = findViewById(R.id.bookBtnBook);
         tvPriceRate2 = findViewById(R.id.tvcdPricingBook);
+
         vehicleRef = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle").child(carId).child(carHostId);
         userHostRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(carHostId);
         userRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
@@ -80,7 +81,6 @@ public class BookDetails extends AppCompatActivity {
                     Intent intent = new Intent(BookDetails.this, PaymentActivity.class);
                     intent.putExtra("price",price);
                     intent.putExtra("carId", carId);
-                    intent.putExtra("carHostId", carHostId);
                     intent.putExtra("carHostName",carHostName);
                     intent.putExtra("bmy",passBmy);
                     intent.putExtra("location",passLocation);

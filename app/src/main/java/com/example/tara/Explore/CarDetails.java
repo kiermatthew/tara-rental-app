@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -28,8 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class CarDetails extends AppCompatActivity {
-    String carId, carHostId,price, carHostName,passBmy,passLocation,passImageUrl, userId;
-    DatabaseReference vehicleRef, userHostRef,userRef;
+    String carId, carHostId,price, carHostName,passBmy,passLocation,passImageUrl, userId, bookedId;
+    DatabaseReference vehicleRef, userHostRef,userRef, userBookRef;
     ImageSlider imageSlider;
     TextView tvBmy, tvLocation, tvPriceRate, tvTransmission, tvDrivetrain, tvSeats,
                 tvType, tvFuelType, tvMileage, tvDescription, hostName,tvPriceRate2;
@@ -37,7 +39,7 @@ public class CarDetails extends AppCompatActivity {
     Button bookBtn;
     DataSnapshot dataSnapshot, child;
     FirebaseAuth mAuth;
-    Boolean alreadyBooked = false, isVerified = false;
+    Boolean isVerified = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,26 @@ public class CarDetails extends AppCompatActivity {
         vehicleRef = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle").child(carId).child(carHostId);
         userHostRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(carHostId);
         userRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
+        userBookRef = userRef;
+
+        userBookRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                child = snapshot.child("bookedCars");
+                for(DataSnapshot snap : child.getChildren()) {
+                    String checkId = snap.getRef().getKey().toString();
+                    if(checkId.equals(carId)){
+                        System.out.println("Booked ");
+                        bookBtn.setText("Booked");
+                        bookBtn.setClickable(false);
+                        bookBtn.setBackgroundColor(Color.parseColor("#58b996"));
+                        bookBtn.setTextColor(Color.parseColor("#FF000000"));
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
 
         bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +116,7 @@ public class CarDetails extends AppCompatActivity {
 
             }
         });
+
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

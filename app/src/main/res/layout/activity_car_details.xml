@@ -473,7 +473,8 @@
                         android:layout_height="wrap_content"
                         android:visibility="visible"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="Book now"/>
+                        android:text="Book now"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
