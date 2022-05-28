@@ -516,7 +516,7 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:hint="@string/select"
-                    style="x@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
                     <AutoCompleteTextView
                         android:id="@+id/etBrand"
                         android:layout_width="match_parent"
