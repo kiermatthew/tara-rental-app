@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="130dp"
             android:clickable="true"
-            android:src="@drawable/ic_plus"
+            android:src="@drawable/ic_plus_sign"
             android:backgroundTint="@color/blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

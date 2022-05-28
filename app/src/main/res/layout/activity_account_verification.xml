@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                app:strokeColor="@color/dark_blue1"
+                app:strokeColor="@color/violet"
                 app:strokeWidth="1dp">
 
                 <ImageView
@@ -99,7 +99,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_plus" />
+                    android:background="@color/violet"
+                    android:src="@drawable/ic_plus_sign" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -109,7 +110,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:visibility="invisible"
-                app:strokeColor="@color/black"
+                app:strokeColor="@color/violet"
                 app:strokeWidth="1dp">
 
                 <ImageView
@@ -117,7 +118,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_plus" />
+                    android:background="@color/violet"
+                    android:src="@drawable/ic_plus_sign" />
             </com.google.android.material.card.MaterialCardView>
 
 
@@ -146,7 +148,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                app:strokeColor="@color/dark_blue1"
+                app:strokeColor="@color/violet"
                 app:strokeWidth="1dp">
 
                 <ImageView
@@ -154,7 +156,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_plus" />
+                    android:background="@color/violet"
+                    android:src="@drawable/ic_plus_sign" />
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
@@ -171,9 +174,11 @@
 
     <Button
         android:id="@+id/verifyBtn"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Verify"
         android:textSize="18sp"

@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
 
 
         <ImageView
@@ -22,7 +24,6 @@
             android:layout_marginTop="100dp"
             app:srcCompat="@drawable/tara_logo" />
 
-
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
@@ -31,12 +32,11 @@
 
             android:layout_marginRight="50dp"
             android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
             android:text="The key to your \n destination."
             android:textColor="#0a1e53"
             android:textSize="40sp"
-            android:textStyle="normal"
-            android:gravity="center"/>
-
+            android:textStyle="normal" />
 
 
         <Button
@@ -51,7 +51,7 @@
             android:paddingTop="5dp"
             android:text="GET STARTED"
             android:textColor="@color/white1"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
     </LinearLayout>
 
