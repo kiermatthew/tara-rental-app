@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tara.Explore.CarDetails;
 import com.example.tara.Main.RecyclerViewInterface;
 import com.example.tara.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +32,7 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
     FirebaseAuth mAuth;
     BookAdapter adapter;
     String userId,carId, carHostId;
-    DataSnapshot child, dataSnapshot;
+    DataSnapshot bookedCarRef, dataSnapshot;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,10 +55,12 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                child = snapshot.child("bookedCars");
-                for(DataSnapshot snapshot1 : child.getChildren()){
-                    BookedCars bookedCars = snapshot1.getValue(BookedCars.class);
-                    list.add(bookedCars);
+                bookedCarRef = snapshot.child("bookedCars");
+                for(DataSnapshot snapshot1 : bookedCarRef.getChildren()){
+                    for(DataSnapshot snapshot2 : snapshot1.getChildren()){
+                        BookedCars bookedCars = snapshot2.getValue(BookedCars.class);
+                        list.add(bookedCars);
+                    }
                 }
 
                 adapter.notifyDataSetChanged();
@@ -72,33 +73,27 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
         });
 
 
-
         return view;
     }
 
     @Override
     public void onItemClick(int position) {
         int index = 0;
-        for(DataSnapshot snapshot1 : child.getChildren()){
+        for(DataSnapshot snapshot1 : bookedCarRef.getChildren()){
             if(index == position){
-                carId = snapshot1.getRef().getKey();
+                DatabaseReference currentReference = snapshot1.getRef();
+                carId = currentReference.getKey();
+
+            }
+            for(DataSnapshot snap2 : snapshot1.getChildren()){
+                if(index == position){
+                    DatabaseReference currentRef = snap2.getRef();
+                    carHostId = currentRef.getKey();
+                }
             }
             index++;
         }
-        assert carId != null;
-        vehicleRef.child(carId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot snap : snapshot.getChildren()){
-                    carHostId = snap.getRef().getKey();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         Intent intent = new Intent(getContext(), BookDetails.class);
         intent.putExtra("carId", carId);

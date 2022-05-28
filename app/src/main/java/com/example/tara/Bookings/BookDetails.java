@@ -35,10 +35,9 @@ public class BookDetails extends AppCompatActivity {
     TextView tvBmy, tvLocation, tvPriceRate, tvTransmission, tvDrivetrain, tvSeats,
             tvType, tvFuelType, tvMileage, tvDescription, hostName,tvPriceRate2;
     ImageView hostPic;
-    Button bookBtn;
     DataSnapshot dataSnapshot;
     FirebaseAuth mAuth;
-    Boolean alreadyBooked = false, isVerified = false;
+    Boolean isVerified = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +52,10 @@ public class BookDetails extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userId = mAuth.getCurrentUser().getUid();
         imageSlider = findViewById(R.id.sliderBook);
+
         carId = getIntent().getStringExtra("carId");
         carHostId = getIntent().getStringExtra("carHostId");
+
         tvBmy = findViewById(R.id.tvcdBmyBook);
         tvLocation = findViewById(R.id.tvcdLocationBook);
         tvPriceRate = findViewById(R.id.tvPriceBook);
@@ -67,46 +68,12 @@ public class BookDetails extends AppCompatActivity {
         tvDescription = findViewById(R.id.tvDescriptionBook);
         hostName = findViewById(R.id.tvHostBook);
         hostPic = findViewById(R.id.ivHostBook);
-        bookBtn = findViewById(R.id.bookBtnBook);
         tvPriceRate2 = findViewById(R.id.tvcdPricingBook);
 
         vehicleRef = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle").child(carId).child(carHostId);
         userHostRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(carHostId);
         userRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
 
-        bookBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(isVerified){
-                    Intent intent = new Intent(BookDetails.this, PaymentActivity.class);
-                    intent.putExtra("price",price);
-                    intent.putExtra("carId", carId);
-                    intent.putExtra("carHostName",carHostName);
-                    intent.putExtra("bmy",passBmy);
-                    intent.putExtra("location",passLocation);
-                    intent.putExtra("carImageUrl",passImageUrl);
-                    startActivity(intent);
-                }
-                else{
-                    MessageDialog loadingDialog = new MessageDialog(BookDetails.this);
-                    loadingDialog.startLoadingDialog();
-                }
-
-
-            }
-        });
-        userRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Boolean verified = (Boolean) snapshot.child("isVerified").getValue();
-                isVerified = verified;
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         vehicleRef.addValueEventListener(new ValueEventListener() {
             @Override
