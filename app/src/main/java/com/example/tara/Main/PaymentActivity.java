@@ -190,7 +190,6 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     public void uploadData(){
-        key = userReference.push().getKey();
 
         Calendar calendar = Calendar.getInstance();
         @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -198,7 +197,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         BookedCars bookedCars = new BookedCars(carImageUrl,bmy,location,price,carHostName,date);
 
-        userReference.child("bookedCars").child(key).setValue(bookedCars);
+        userReference.child("bookedCars").child(carId).setValue(bookedCars);
 
     }
 }

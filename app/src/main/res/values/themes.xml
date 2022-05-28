@@ -11,7 +11,7 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/white1</item><!--button color-->
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/status_bar</item> <!--notif bar-->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/violet</item> <!--notif bar-->
         <!-- Customize your theme here. -->
     </style>
 

@@ -1,6 +1,7 @@
 package com.example.tara.Bookings;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tara.Explore.CarDetails;
 import com.example.tara.Main.RecyclerViewInterface;
 import com.example.tara.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,13 +27,13 @@ import java.util.ArrayList;
 
 public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterface {
     RecyclerView recyclerview;
-    DatabaseReference userRef,vehicleRef,bookingRef;
+    DatabaseReference userRef,vehicleRef;
     ArrayList<BookedCars> list;
     ArrayList<String> carIdList;
     FirebaseAuth mAuth;
     BookAdapter adapter;
-    String userId,carId;
-    DataSnapshot child;
+    String userId,carId, carHostId;
+    DataSnapshot child, dataSnapshot;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,19 +49,19 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
         recyclerview.setAdapter(adapter);
         String databaseLocation = getString(R.string.databasePath);
 
-        bookingRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
+        userRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
+        vehicleRef = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle");
 
-        bookingRef.addValueEventListener(new ValueEventListener() {
+        userRef.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child("bookedCars").exists()){
-                    child = snapshot.child("bookedCars");
-                    for(DataSnapshot snapshot1 : child.getChildren()){
-                        BookedCars bookedCars = snapshot1.getValue(BookedCars.class);
-                        list.add(bookedCars);
-                    }
+                child = snapshot.child("bookedCars");
+                for(DataSnapshot snapshot1 : child.getChildren()){
+                    BookedCars bookedCars = snapshot1.getValue(BookedCars.class);
+                    list.add(bookedCars);
                 }
+
                 adapter.notifyDataSetChanged();
             }
 
@@ -69,11 +71,38 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
             }
         });
 
+
+
         return view;
     }
 
     @Override
     public void onItemClick(int position) {
+        int index = 0;
+        for(DataSnapshot snapshot1 : child.getChildren()){
+            if(index == position){
+                carId = snapshot1.getRef().getKey();
+            }
+            index++;
+        }
+        assert carId != null;
+        vehicleRef.child(carId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snap : snapshot.getChildren()){
+                    carHostId = snap.getRef().getKey();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        Intent intent = new Intent(getContext(), BookDetails.class);
+        intent.putExtra("carId", carId);
+        intent.putExtra("carHostId", carHostId);
+        startActivity(intent);
     }
 }
