@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tara</string>
+    <string name="app_name">TARA</string>
     <string name="account">Account</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,12 +14,12 @@
     <string name="infoHeader">Here\'s what we need</string>
     <string name="infoSubHeader">Just 3 steps to host your car!</string>
     <string name="locationHeader">Where\'s your car</string>
-    <string name="locationSubHeader">The actual location is needed for our renters to find your car. Don\'t worry your actual location won\'t be shown to public</string>
+    <string name="locationSubHeader">Our renters would require your actual address in order to locate your vehicle. Don\'t worry, your exact location will not be revealed to the public.</string>
     <string name="insuranceHeader">Insurance</string>
     <string name="protectionHeader">Additional Protection</string>
     <string name="insuranceSubHeader">Insurance type can be found on the front page\nof your policy</string>
-    <string name="trackSubHeader">Your car can be located and tracked with our \nhighly accurate TARA tracker. A refundable deposit\nof Php 5,000 is applicable</string>
-    <string name="descSubHeader">Tell our renters more about your car and what\nmakes it special!</string>
+    <string name="trackSubHeader">Your car can be located and tracked with our highly accurate TARA tracker. A refundable deposit of Php 5,000 is applicable.</string>
+    <string name="descSubHeader">Tell our renters more about your car and what makes it special!</string>
     <string name="select">Select Item</string>
     <string name="aboutFirstContent">TARA is a people-to-people carHosted sharing platform where Guests can rent any carHosted from the TARA community that meets the needs and expectations for their planned and upcoming travels.\n\nTARA envisions a world where people are more connected, mobility is improved, and travel is simplified. We strive to assist our guests, particularly someone without a carHosted, in filling the gaps in their travel by exploring with any carHosted. We also want to provide Hosts the opportunity to increase their income in financing their vehicles and their lives while also helping in the improvement of mobility in the Philippines.</string>
     <string name="aboutSecondContent">Find the ideal car for your needs.\n\nFrom dream cars to daily driving, we have a huge selection of 4-wheelers to any occasion. Whether its weddings, joyrides around town, road trips, adventures to new places, you can rent your desired carHosted at an affordable rate from TARA.\n\nBe sustainable and eco-friendly.\n\nSharing a car eliminates around 11 vehicles from the road, resulting in lower carbon emissions, less pollution, and better air quality. By sharing a car, we are doing ourselves and the planet a favor.\n\nEnhance your quality of life.\n\nTARA\'s goal is to create improved mobility features with the best carHosted sharing experience ever. Share your carHosted as a Host to earn extra income and rent out other host vehicles for any drive.\n\nStrengthen Community Experience\n\nMeet people who share your interests in the TARA carHosted sharing community. TARA aspires to create a community that shares the goal of increasing mobility, reducing carbon emissions, and creating a better environment for humanity.</string>
