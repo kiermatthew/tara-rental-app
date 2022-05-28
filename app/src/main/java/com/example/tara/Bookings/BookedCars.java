@@ -2,7 +2,7 @@ package com.example.tara.Bookings;
 
 public class BookedCars {
 
-    public String exterior1Url,bmy,location,priceRate, name,bookDate;
+    public String exterior1Url,bmy,location,priceRate, name,bookDate, carHostId;
 
     BookedCars(){
 
@@ -40,4 +40,6 @@ public class BookedCars {
     public String getBookDate() {
         return bookDate;
     }
+
+
 }

@@ -197,7 +197,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         BookedCars bookedCars = new BookedCars(carImageUrl,bmy,location,price,carHostName,date);
 
-        userReference.child("bookedCars").child(carId).setValue(bookedCars);
+        userReference.child("bookedCars").child(carId).child(carHostId).setValue(bookedCars);
 
     }
 }
