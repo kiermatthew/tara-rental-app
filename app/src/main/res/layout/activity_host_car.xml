@@ -286,7 +286,7 @@
                       android:scaleType="centerCrop"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:src="@drawable/ic_plus"/>
+                      android:src="@drawable/ic_plus_sign"/>
               </com.google.android.material.card.MaterialCardView>
 
               <com.google.android.material.card.MaterialCardView
@@ -303,7 +303,7 @@
                       android:scaleType="centerCrop"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:src="@drawable/ic_plus"/>
+                      android:src="@drawable/ic_plus_sign"/>
               </com.google.android.material.card.MaterialCardView>
 
               <com.google.android.material.card.MaterialCardView
@@ -320,7 +320,7 @@
                       android:scaleType="centerCrop"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:src="@drawable/ic_plus"/>
+                      android:src="@drawable/ic_plus_sign"/>
               </com.google.android.material.card.MaterialCardView>
 
               <com.google.android.material.card.MaterialCardView
@@ -337,7 +337,7 @@
                       android:scaleType="centerCrop"
                       android:layout_width="match_parent"
                       android:layout_height="match_parent"
-                      android:src="@drawable/ic_plus"/>
+                      android:src="@drawable/ic_plus_sign"/>
               </com.google.android.material.card.MaterialCardView>
 
           </LinearLayout>
@@ -383,7 +383,7 @@
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_plus" />
+                        android:src="@drawable/ic_plus_sign" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -401,7 +401,7 @@
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_plus" />
+                        android:src="@drawable/ic_plus_sign" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -419,7 +419,7 @@
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_plus" />
+                        android:src="@drawable/ic_plus_sign" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -437,7 +437,7 @@
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_plus" />
+                        android:src="@drawable/ic_plus_sign" />
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
@@ -826,7 +826,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus"/>
+                            android:src="@drawable/ic_plus_sign"/>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -843,7 +843,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus"/>
+                            android:src="@drawable/ic_plus_sign"/>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -860,7 +860,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus"/>
+                            android:src="@drawable/ic_plus_sign"/>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -877,7 +877,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus"/>
+                            android:src="@drawable/ic_plus_sign"/>
                     </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
@@ -923,7 +923,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus" />
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -941,7 +941,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus" />
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -959,7 +959,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus" />
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
@@ -977,7 +977,7 @@
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_plus" />
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
@@ -1041,7 +1041,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_plus"/>
+                        android:src="@drawable/ic_plus_sign"/>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -1058,7 +1058,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_plus"/>
+                        android:src="@drawable/ic_plus_sign"/>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -1075,7 +1075,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_plus"/>
+                        android:src="@drawable/ic_plus_sign"/>
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>

@@ -31,7 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 
 public class SignupActivity extends AppCompatActivity {
-    private EditText etName, etEmail, etPassword, etConfirmPassword;
+    private EditText etName, etEmail, etPassword, etConfirmPassword, etContactNum;
     private FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
@@ -43,6 +43,7 @@ public class SignupActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         etName = findViewById(R.id.name);
+        etContactNum = findViewById(R.id.contactNum);
         etEmail = findViewById(R.id.emailSignup);
         etPassword = findViewById(R.id.passwordSignup);
         etConfirmPassword = findViewById(R.id.confirmPassword);
@@ -125,7 +126,7 @@ public class SignupActivity extends AppCompatActivity {
             String imageUrl = signInAccount.getPhotoUrl().toString();
 
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            User userGmail = new User(name,email,userId, imageUrl,false,false,false);
+            User userGmail = new User(name,"",email,userId, imageUrl,false,false,false);
             String databaseLocation = getString(R.string.databasePath);
             FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId)
                     .setValue(userGmail).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -145,6 +146,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void createAccount(){
         String name = etName.getText().toString();
+        String contactNumber = etContactNum.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         String confirmPW = etConfirmPassword.getText().toString();
@@ -152,6 +154,10 @@ public class SignupActivity extends AppCompatActivity {
         if(name.isEmpty()){
             etName.setError("Name cannot be empty");
             etName.requestFocus();
+        }
+        else if(contactNumber.isEmpty()){
+            etContactNum.setError("Email cannot be empty");
+            etContactNum.requestFocus();
         }
         else if(email.isEmpty()){
             etEmail.setError("Email cannot be empty");
@@ -180,7 +186,7 @@ public class SignupActivity extends AppCompatActivity {
                                     // store user info on database
                                     String imageUrl = "";
                                     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                    User user = new User(name,email,userId,imageUrl,false,false,false);
+                                    User user = new User(name,contactNumber,email,userId,imageUrl,false,false,false);
                                     String databaseLocation = getString(R.string.databasePath);
                                     FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId)
                                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

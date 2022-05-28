@@ -179,7 +179,7 @@ public class LoginActivity extends AppCompatActivity {
             String imageUrl = signInAccount.getPhotoUrl().toString();
 
             String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            User userGmail = new User(name,email,userId,imageUrl,false,false,false);
+            User userGmail = new User(name,"contacNum",email,userId,imageUrl,false,false,false);
             String databaseLocation = "https://tara-351111-default-rtdb.firebaseio.com/";
             FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId)
                     .setValue(userGmail).addOnCompleteListener(new OnCompleteListener<Void>() {
