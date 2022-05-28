@@ -64,7 +64,7 @@ public class ProfileFragmentMenu extends Fragment {
         logoutBtn = view.findViewById(R.id.logoutBtn);
         tvUserName = view.findViewById(R.id.userName);
         ivPhoto1 = view.findViewById(R.id.userPhoto);
-        profileBtn = view.findViewById(R.id.profileBtn);
+
         verifyStatus = view.findViewById(R.id.verificationStatus);
         signInAccount = GoogleSignIn.getLastSignedInAccount(getContext());
         databaseLocation = getString(R.string.databasePath);
