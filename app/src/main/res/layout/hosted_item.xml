@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="270dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="10dp"
+    app:cardElevation="5dp"
     app:cardBackgroundColor="@color/white"
     android:layout_marginTop="15dp"
     android:layout_marginLeft="35dp"
@@ -40,8 +40,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="20dp"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Brand, Model, Year"
+                android:textStyle="bold"
                 android:textColor="@color/dark_blue1"
                 android:textSize="16dp" />
 
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:paddingLeft="20dp"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Plate Number"
                 android:textColor="@color/dark_blue1"
                 android:textSize="16dp" />
