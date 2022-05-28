@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_bg"
     tools:context=".Profile.ProfileFragmentMenu">
 
 
@@ -161,6 +160,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/profile_bg"
         android:fillViewport="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -294,7 +294,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/profile_about" />
+                            app:srcCompat="@drawable/profile_about" />/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -396,7 +396,8 @@
                             android:src="@drawable/profile_account"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/profile_legal" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -416,7 +417,7 @@
                         android:id="@+id/logoutBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="35dp"
+                        android:layout_marginTop="40dp"
                         android:layout_marginBottom="30dp"
                         android:background="@drawable/btn_violet"
                         android:text="Logout"
