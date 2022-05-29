@@ -31,9 +31,6 @@
             android:name=".Main.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".Host.EditHostCar"
-            android:exported="false" />
-        <activity
             android:name=".Explore.CarDetails"
             android:exported="false" />
         <activity
