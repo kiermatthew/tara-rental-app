@@ -95,18 +95,18 @@ public class  AccountActivity extends AppCompatActivity {
             tvName.setText(signInAccount.getDisplayName());
             tvEmail.setText(signInAccount.getEmail());
             Glide.with(this).load(photoUrl).into(ivEditPhoto);
-            tvContact.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    AddContact addContact = new AddContact(AccountActivity.this);
-                    addContact.startLoadingDialog();
-                }
-            });
-
         }
         else
             ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
 
+        tvContact.setText("Add contact");
+        tvContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddContact addContact = new AddContact(AccountActivity.this);
+                addContact.startLoadingDialog();
+            }
+        });
 
         userRef.addValueEventListener(new ValueEventListener() {
             @SuppressLint({"ResourceAsColor", "SetTextI18n"})

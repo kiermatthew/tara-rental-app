@@ -11,6 +11,7 @@ import android.widget.EditText;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.tara.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -20,6 +21,7 @@ public class AddContact {
     AppCompatButton okayBtn;
     EditText etContact;
     DatabaseReference userRef;
+    String userId;
 
     public AddContact(Activity activty){
         this.activty = activty;
@@ -28,12 +30,13 @@ public class AddContact {
     public void startLoadingDialog(){
         dialog = new Dialog(activty);
         LayoutInflater inflater = activty.getLayoutInflater();
-        dialog.setContentView(R.layout.message_dialog);
+        dialog.setContentView(R.layout.contact_dialog);
 
         String databaseLocation = "https://tara-351111-default-rtdb.firebaseio.com";
         okayBtn = dialog.findViewById(R.id.okayBtn);
         etContact = dialog.findViewById(R.id.etContact);
-        userRef = FirebaseDatabase.getInstance(databaseLocation).getReference().child("users");
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        userRef = FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(false);
         dialog.show();
@@ -42,7 +45,7 @@ public class AddContact {
             @Override
             public void onClick(View view) {
                 String contact = etContact.getText().toString();
-                if(!contact.isEmpty()){
+                if(!contact.equals("")){
                     userRef.child("contactNum").setValue(contact);
                     dismissDialog();
                 }
