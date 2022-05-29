@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/grayish_blue1">
+    android:background="@drawable/gradient_background_login_signup">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,112 +33,121 @@
         </com.google.android.material.appbar.AppBarLayout>
 
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="We are here for you"
-            android:textColor="@color/dark_blue1"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView9"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:fontFamily="@font/poppins_regular"-->
+<!--            android:text="We are here for you"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="25sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />-->
 
-        <TextView
-            android:id="@+id/textVi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="always."
-            android:textColor="@color/dark_blue1"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+<!--        <TextView-->
+<!--            android:id="@+id/textVi"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:fontFamily="@font/poppins_regular"-->
+<!--            android:text="always."-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView9" />-->
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardY"
-            android:layout_width="match_parent"
-            android:layout_height="520dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            app:cardBackgroundColor="@color/dark_blue"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textVi">
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/cardY"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="520dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            app:cardBackgroundColor="@color/white1"-->
+<!--            app:cardCornerRadius="15dp"-->
+<!--            app:cardElevation="12dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.491"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textVi">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/firstP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                android:text="Please contact us if there is anything wrong with the car or the host.
-We are always available to assist you with rebooking, refunds, and any such issues.\n\nWhen the TARA app isn't working properly, try the following:
-\n\n(1) Make sure you have the most recent version of the program.\n(2) Verify that your internet connection is operational.\n(3) Try restarting or reinstalling the app.\n(4) Login out of your account and then sign back in.\n(5) Verify that location permission is granted.\n\nIf the issue persists, please take a snapshot of the error message, or record your screen and submit it to"
-                android:textColor="@color/white">
-            </TextView>
+<!--            <TextView-->
+<!--                android:id="@+id/firstP"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="24dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:text="Please contact us if there is anything wrong with the car or the host.-->
+<!--We are always available to assist you with rebooking, refunds, and any such issues.\n\nWhen the TARA app isn't working properly, try the following:-->
+<!--\n\n(1) Make sure you have the most recent version of the program.\n(2) Verify that your internet connection is operational.\n(3) Try restarting or reinstalling the app.\n(4) Login out of your account and then sign back in.\n(5) Verify that location permission is granted.\n\nIf the issue persists, please take a snapshot of the error message, or record your screen and submit it to:"-->
+<!--                android:textColor="@color/dark_blue1"-->
+<!--                android:textSize="16sp"></TextView>-->
 
-            <TextView
-                android:id="@+id/emailTara"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:text="tara.vehiclerentalapp2022@gmail.com">
+<!--            <TextView-->
+<!--                android:id="@+id/emailTara"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="@color/blue"-->
+<!--                android:textStyle="bold|italic"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="tara.vehiclerentalapp2022@gmail.com">-->
 
-            </TextView>
-            <TextView
+<!--            </TextView>-->
+<!--            <TextView-->
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:text="We may need additional information from you to assist you further.">
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="24dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginRight="24dp"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textColor="@color/dark_blue1"-->
+<!--                android:text="We may need additional information from you to assist you further.">-->
 
-            </TextView>
-        </LinearLayout>
+<!--            </TextView>-->
+<!--        </LinearLayout>-->
 
 
 
-        </com.google.android.material.card.MaterialCardView>
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
         <TextView
             android:id="@+id/ourTeam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textStyle="bold"
             android:text="Our Team"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardY" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
         <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="350dp"
+            android:layout_marginBottom="1400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ourTeam">
 
             <LinearLayout
@@ -156,48 +165,54 @@ We are always available to assist you with rebooking, refunds, and any such issu
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <ImageView
-                            android:src="@drawable/team1"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
-                            />
+                            android:layout_marginTop="20dp"
+                            android:src="@drawable/team1" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_regular"
                             android:text="Kier Matthew Encarnacion"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"></TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
                             android:text="Full Stack Developer"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:textColor="@color/blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold|italic"></TextView>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/kierFb"
-                                android:src="@drawable/logo_facebook"
-                                android:layout_width="50dp"
+                                android:layout_width="30dp"
                                 android:layout_height="50dp"
-                                android:layout_marginRight="10dp">
-                            </ImageView>
+                                android:layout_marginTop="0dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/logo_facebook"></ImageView>
+
                             <ImageView
                                 android:id="@+id/kierGit"
-                                android:src="@drawable/logo_github"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp">
-                            </ImageView>
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/logo_github"></ImageView>
                         </LinearLayout>
-
-
 
 
                     </LinearLayout>
@@ -206,57 +221,62 @@ We are always available to assist you with rebooking, refunds, and any such issu
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="12dp"
-                    android:layout_marginLeft="30dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/team2"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
-                            />
+                            android:src="@drawable/team2" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Hazel Anne Caringal"
-                            android:textColor="@color/dark_blue"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:text="Hazel Anne Caringal"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"></TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
                             android:text="UI Designer"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:textColor="@color/blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold|italic"></TextView>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/hazelFb"
-                                android:src="@drawable/logo_facebook"
-                                android:layout_width="50dp"
+                                android:layout_width="30dp"
                                 android:layout_height="50dp"
-                                android:layout_marginRight="10dp">
-                            </ImageView>
+                                android:layout_marginTop="0dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/logo_facebook"></ImageView>
+
                             <ImageView
                                 android:id="@+id/hazelGit"
-                                android:src="@drawable/logo_github"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp">
-                            </ImageView>
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/logo_github"></ImageView>
                         </LinearLayout>
-
 
 
                     </LinearLayout>
@@ -265,114 +285,124 @@ We are always available to assist you with rebooking, refunds, and any such issu
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="12dp"
-                    android:layout_marginLeft="30dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/team3"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
-                            />
+                            android:src="@drawable/team3" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Renz Brian Matias"
-                            android:textColor="@color/dark_blue"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:text="Renz Brian Matias"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"></TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
                             android:text="Backend Developer"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:textColor="@color/blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold|italic"></TextView>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/renzFb"
-                                android:src="@drawable/logo_facebook"
-                                android:layout_width="50dp"
+                                android:layout_width="30dp"
                                 android:layout_height="50dp"
-                                android:layout_marginRight="10dp">
-                            </ImageView>
+                                android:layout_marginTop="0dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/logo_facebook"></ImageView>
+
                             <ImageView
                                 android:id="@+id/renzGit"
-                                android:src="@drawable/logo_github"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp">
-                            </ImageView>
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/logo_github"></ImageView>
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
 
-
-
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="12dp"
-                    android:layout_marginLeft="30dp">
+                    app:cardElevation="12dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/team4"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
-                            />
+                            android:src="@drawable/team4" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Reycel Castillo"
-                            android:textColor="@color/dark_blue"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:text="Reycel Castillo"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"></TextView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
                             android:text="UI Designer"
-                            android:textColor="@color/dark_blue"
-                            android:textSize="18sp">
-                        </TextView>
+                            android:textColor="@color/blue"
+                            android:textSize="16sp"
+                            android:textStyle="bold|italic"></TextView>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
+
                             <ImageView
                                 android:id="@+id/reycelFb"
-                                android:src="@drawable/logo_facebook"
-                                android:layout_width="50dp"
+                                android:layout_width="30dp"
                                 android:layout_height="50dp"
-                                android:layout_marginRight="10dp">
-                            </ImageView>
+                                android:layout_marginTop="0dp"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/logo_facebook"></ImageView>
+
                             <ImageView
                                 android:id="@+id/reycelGit"
-                                android:src="@drawable/logo_github"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp">
-                            </ImageView>
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="0dp"
+                                android:src="@drawable/logo_github"></ImageView>
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -381,6 +411,31 @@ We are always available to assist you with rebooking, refunds, and any such issu
 
 
         </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="We are here for you \n always."
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/contact"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
