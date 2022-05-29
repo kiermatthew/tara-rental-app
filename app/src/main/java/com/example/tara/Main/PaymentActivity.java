@@ -41,6 +41,7 @@ public class PaymentActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     String userId, carId, key, carHostId,carHostName,price,bmy,location,carImageUrl;
     DataSnapshot vehicleSnapshot, userSnapshot;
+    private TextView textView;
 
 
 
@@ -199,5 +200,12 @@ public class PaymentActivity extends AppCompatActivity {
 
         userReference.child("bookedCars").child(carId).child(carHostId).setValue(bookedCars);
 
+    }
+
+    private void GENERATE(){
+        RandomString randomString = new RandomString();
+
+        String result=randomString.generateAlphanumeric(6);
+        textView.setText(result);
     }
 }
