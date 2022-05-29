@@ -85,8 +85,8 @@ public class CarDetails extends AppCompatActivity {
                     if(checkId.equals(carId)){
                         bookBtn.setText("Booked");
                         bookBtn.setClickable(false);
-                        bookBtn.setBackgroundColor(Color.parseColor("#58b996"));
-                        bookBtn.setTextColor(Color.parseColor("#FF000000"));
+                        bookBtn.setBackgroundColor(Color.parseColor("#1DBEF5"));
+                        bookBtn.setTextColor(Color.parseColor("#4530B1"));
                     }
                 }
 

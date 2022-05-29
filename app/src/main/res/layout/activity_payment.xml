@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayish_blue1"
+    android:background="@drawable/gradient_background_login_signup"
     tools:context=".Main.PaymentActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,13 +14,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/appBar"
             style="@style/TARA.toolbar"
-            app:title="confirm payment"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/ic_back_btn" />
+            android:layout_height="45dp"
+            app:navigationIcon="@drawable/ic_back_btn"
+            app:title="confirm payment" />
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -30,8 +31,8 @@
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-50dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -43,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:orientation="vertical"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -52,18 +53,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="You're about to pay"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="You are about to pay"
+                    android:textColor="@color/white1"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvPaymentPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="Price"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white1"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <TextView
@@ -71,8 +75,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Enter Card Details"
-                android:textColor="@color/black"
+                android:textColor="@color/white1"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -83,10 +88,10 @@
                 android:id="@+id/materialCardView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                app:cardCornerRadius="20dp"
+                android:layout_marginRight="40dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -105,36 +110,50 @@
                         android:id="@+id/etCardNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/dark_blue1"
                         android:digits="01234 56789"
+                        android:fontFamily="@font/poppins_regular"
                         android:hint="Card Number"
                         android:inputType="number"
                         android:maxLength="19"
+                        android:textColor="@color/dark_blue1"
+                        android:textColorHint="@color/dark_blue1"
                         android:textSize="15sp" />
 
                     <EditText
                         android:id="@+id/etNameOnCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/dark_blue1"
                         android:capitalize="words"
+                        android:fontFamily="@font/poppins_regular"
                         android:hint="Name on card"
                         android:inputType="textCapSentences"
+                        android:textColor="@color/dark_blue1"
+                        android:textColorHint="@color/dark_blue1"
                         android:textSize="15sp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        tools:layout_editor_absoluteX="20dp"
+                        tools:layout_editor_absoluteY="161dp">
 
                         <EditText
                             android:id="@+id/etExpiration"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
+                            android:backgroundTint="@color/dark_blue1"
+                            android:fontFamily="@font/poppins_regular"
                             android:hint="Expiration (MM/YY)"
                             android:inputType="phone"
                             android:maxLength="5"
+                            android:textColor="@color/dark_blue1"
+                            android:textColorHint="@color/dark_blue1"
                             android:textSize="15sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -145,10 +164,14 @@
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start"
+                            android:backgroundTint="@color/dark_blue1"
                             android:digits="0123456789"
+                            android:fontFamily="@font/poppins_regular"
                             android:hint="CVV"
                             android:inputType="number"
                             android:maxLength="3"
+                            android:textColor="@color/dark_blue1"
+                            android:textColorHint="@color/dark_blue1"
                             android:textSize="15sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -166,9 +189,10 @@
                 android:id="@+id/ewallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="via e-wallet"
-                android:textColor="@color/black"
+                android:textColor="@color/white1"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +204,7 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -191,91 +215,153 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/gcash"/>
+                        android:src="@drawable/gcash" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
-                        android:text="GCASH"/>
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="GCASH"
+                        android:textColor="@color/white1"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="@color/red"
-                        android:text="NOT YET AVAILABLE"/>
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="NOT YET AVAILABLE"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/paymaya"/>
+                        android:src="@drawable/paymaya" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
-                        android:text="PAYMAYA"/>
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="PAYMAYA"
+                        android:textColor="@color/white1"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"
-                        android:textColor="@color/red"
-                        android:text="NOT YET AVAILABLE"/>
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="NOT YET AVAILABLE"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/paypal"/>
+                        android:src="@drawable/paypal" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
-                        android:text="PAYPAL"/>
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingLeft="10dp"
+                        android:text="PAYPAL"
+                        android:textColor="@color/white1"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="@color/red"
-                        android:text="NOT YET AVAILABLE"/>
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="NOT YET AVAILABLE"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <Button
+            <androidx.cardview.widget.CardView
                 android:id="@+id/payBtn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="28dp"
-                android:text="Pay now"
+                android:layout_height="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="50dp"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.119"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="70dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:paddingTop="5dp"
+                    android:text="PAY NOW"
+                    android:textAlignment="center"
+                    android:textColor="@color/violet"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--            <Button-->
+            <!--                android:id="@+id/payBtn"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="50dp"-->
+<!--                            android:layout_marginRight="50dp"-->
+<!--                            android:layout_marginTop="30dp"-->
+<!--                            android:layout_marginBottom="44dp"-->
+            <!--                android:fontFamily="@font/poppins_regular"-->
+            <!--                android:text="Pay now"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:background="@drawable/background_btn_white"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.0"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

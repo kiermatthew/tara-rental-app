@@ -22,30 +22,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:src="@drawable/book_now"
         app:layout_constraintBottom_toTopOf="@+id/bookNowBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <androidx.cardview.widget.CardView
         android:id="@+id/bookNowBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Book now"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:background="@drawable/btn_violet"
+        android:layout_marginBottom="50dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingTop="5dp"
+            android:text="BOOK NOW"
+            android:textAlignment="center"
+            android:textColor="@color/violet"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/bookNowBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="44dp"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginRight="50dp"-->
+<!--        android:fontFamily="@font/poppins_regular"-->
+<!--        android:text="Book now"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:background="@drawable/btn_violet"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

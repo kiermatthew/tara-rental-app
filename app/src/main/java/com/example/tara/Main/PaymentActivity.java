@@ -3,6 +3,7 @@ package com.example.tara.Main;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class PaymentActivity extends AppCompatActivity {
-    Button payBtn;
+    CardView payBtn;
     TextView tvPrice;
     EditText cardNumberEditText, etExpiration, etCardName;
     DatabaseReference userReference,bookReference, vehicleReference;
@@ -68,7 +69,7 @@ public class PaymentActivity extends AppCompatActivity {
         etExpiration = findViewById(R.id.etExpiration);
         etCardName = findViewById(R.id.etNameOnCard);
         etCardName.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        tvPrice.setText("₱"+price);
+        tvPrice.setText("Php "+price);
         userId = mAuth.getCurrentUser().getUid();
         userReference = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(userId);
         vehicleReference = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle").child(carId);
