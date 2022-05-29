@@ -15,6 +15,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.tara.Main.RecyclerViewInterface;
 import com.example.tara.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +34,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
     CarExploreAdapter myAdapter;
     ArrayList<Car> list, filteredList;
     SwipeRefreshLayout swipeRefreshLayout;
-    String carId, carHostId,search;
+    String carId, carHostId,search,userId;
     DataSnapshot dataSnapshot;
     SearchView searchView;
     Boolean isFiltered = false;
@@ -48,6 +49,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
         query = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle");
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
         searchView = view.findViewById(R.id.searchView);
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         recyclerView = view.findViewById(R.id.carListRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -79,8 +81,11 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-                        Car car = dataSnapshot1.getValue(Car.class);
-                        list.add(car);
+                        String checkId = dataSnapshot1.getRef().getKey();
+                        if(!(checkId.equals(userId))){
+                            Car car = dataSnapshot1.getValue(Car.class);
+                            list.add(car);
+                        }
                     }
                 }
                 myAdapter.notifyDataSetChanged();
@@ -104,8 +109,11 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-                                        Car car = dataSnapshot1.getValue(Car.class);
-                                        list.add(car);
+                                        String checkId = dataSnapshot1.getRef().getKey();
+                                        if(!(checkId.equals(userId))){
+                                            Car car = dataSnapshot1.getValue(Car.class);
+                                            list.add(car);
+                                        }
                                     }
                                 }
                                 myAdapter.notifyDataSetChanged();
@@ -131,7 +139,8 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         String location = dataSnapshot1.child("location").getValue().toString();
-                        if (location.toLowerCase().contains(newText.toLowerCase())) {
+                        String checkId = dataSnapshot1.getRef().getKey();
+                        if (!(checkId.equals(userId))&&location.toLowerCase().contains(newText.toLowerCase())) {
                             Car car = dataSnapshot1.getValue(Car.class);
                             filteredList.add(car);
                         }

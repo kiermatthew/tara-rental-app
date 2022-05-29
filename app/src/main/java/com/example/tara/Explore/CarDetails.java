@@ -34,12 +34,12 @@ public class CarDetails extends AppCompatActivity {
     DatabaseReference vehicleRef, userHostRef,userRef, userBookRef;
     ImageSlider imageSlider;
     TextView tvBmy, tvLocation, tvPriceRate, tvTransmission, tvDrivetrain, tvSeats,
-                tvType, tvFuelType, tvMileage, tvDescription, hostName,tvPriceRate2;
+                tvType, tvFuelType, tvMileage, tvDescription, hostName,tvPriceRate2, contactNum;
     ImageView hostPic;
     Button bookBtn;
     DataSnapshot dataSnapshot, child;
     FirebaseAuth mAuth;
-    Boolean isVerified = false;
+    Boolean isVerified = false, ownCar = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class CarDetails extends AppCompatActivity {
         hostName = findViewById(R.id.tvHost);
         hostPic = findViewById(R.id.ivHost);
         bookBtn = findViewById(R.id.bookBtn);
+        contactNum = findViewById(R.id.tvContact);
         tvPriceRate2 = findViewById(R.id.tvcdPricing);
         vehicleRef = FirebaseDatabase.getInstance(databaseLocation).getReference("vehicle").child(carId).child(carHostId);
         userHostRef = FirebaseDatabase.getInstance(databaseLocation).getReference("users").child(carHostId);
@@ -82,13 +83,13 @@ public class CarDetails extends AppCompatActivity {
                 for(DataSnapshot snap : child.getChildren()) {
                     String checkId = snap.getRef().getKey().toString();
                     if(checkId.equals(carId)){
-                        System.out.println("Booked ");
                         bookBtn.setText("Booked");
                         bookBtn.setClickable(false);
                         bookBtn.setBackgroundColor(Color.parseColor("#58b996"));
                         bookBtn.setTextColor(Color.parseColor("#FF000000"));
                     }
                 }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) { }
@@ -150,6 +151,7 @@ public class CarDetails extends AppCompatActivity {
                 tvDescription.setText(snapshot.child("description").getValue().toString());
                 tvPriceRate2.setText(snapshot.child("priceRate").getValue().toString());
 
+
                 String exterior1Url = snapshot.child("exterior1Url").getValue().toString();
                 slideModels.add(new SlideModel(exterior1Url,null));
 
@@ -183,6 +185,7 @@ public class CarDetails extends AppCompatActivity {
                 }
 
                 imageSlider.setImageList(slideModels, ScaleTypes.CENTER_CROP);
+
             }
 
             @Override
@@ -190,6 +193,7 @@ public class CarDetails extends AppCompatActivity {
 
             }
         });
+
 
         userHostRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -200,6 +204,7 @@ public class CarDetails extends AppCompatActivity {
                 }
                 carHostName = snapshot.child("name").getValue().toString();
                 hostName.setText(capitalizeWord(carHostName));
+                contactNum.setText(snapshot.child("contactNum").getValue().toString());
             }
 
             @Override

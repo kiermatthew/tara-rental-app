@@ -657,30 +657,6 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.carGrant1:
-                selectImage(1);
-                break;
-            case R.id.carGrant2:
-                selectImage(2);
-                break;
-            case R.id.carGrant3:
-                selectImage(3);
-                break;
-            case R.id.carGrant4:
-                selectImage(4);
-                break;
-            case R.id.roadTax1:
-                selectImage(5);
-                break;
-            case R.id.roadTax2:
-                selectImage(6);
-                break;
-            case R.id.roadTax3:
-                selectImage(7);
-                break;
-            case R.id.roadTax4:
-                selectImage(8);
-                break;
             case R.id.carExterior1:
                 selectImage(9);
                 break;
@@ -704,6 +680,30 @@ public class HostCar extends AppCompatActivity implements View.OnClickListener{
                 break;
             case R.id.carInterior4:
                 selectImage(16);
+                break;
+            case R.id.carGrant1:
+                selectImage(1);
+                break;
+            case R.id.carGrant2:
+                selectImage(2);
+                break;
+            case R.id.carGrant3:
+                selectImage(3);
+                break;
+            case R.id.carGrant4:
+                selectImage(4);
+                break;
+            case R.id.roadTax1:
+                selectImage(5);
+                break;
+            case R.id.roadTax2:
+                selectImage(6);
+                break;
+            case R.id.roadTax3:
+                selectImage(7);
+                break;
+            case R.id.roadTax4:
+                selectImage(8);
                 break;
             case R.id.ivInsurance1:
                 selectImage(17);

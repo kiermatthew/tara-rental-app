@@ -193,7 +193,7 @@ public class PaymentActivity extends AppCompatActivity {
     public void uploadData(){
 
         Calendar calendar = Calendar.getInstance();
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String date = simpleDateFormat.format(calendar.getTime());
 
         BookedCars bookedCars = new BookedCars(carImageUrl,bmy,location,price,carHostName,date);

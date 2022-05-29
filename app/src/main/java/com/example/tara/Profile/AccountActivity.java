@@ -49,7 +49,7 @@ import java.util.Locale;
 
 public class  AccountActivity extends AppCompatActivity {
 //    private LinearLayout llName, llEmail, llPassword;
-    private TextView tvName, tvEmail, tvPassword, verifyAccountBtn;
+    private TextView tvName, tvEmail, tvPassword, verifyAccountBtn, tvContact;
     private TextView tvEditName;
     private ImageView ivEditPhoto;
     private Button saveChangesBtn;
@@ -71,9 +71,6 @@ public class  AccountActivity extends AppCompatActivity {
         //fetch user data
 
         databaseLocation = getString(R.string.databasePath);
-//        llName = findViewById(R.id.accountUserName);
-//        llEmail = findViewById(R.id.accountEmail);
-//        llPassword = findViewById(R.id.accountPassword);
         tvName = findViewById(R.id.tvName);
         tvEmail = findViewById(R.id.tvEmail);
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -82,6 +79,7 @@ public class  AccountActivity extends AppCompatActivity {
         saveChangesBtn = findViewById(R.id.saveChangesBtn);
         verifyAccountBtn = findViewById(R.id.verifyAccountBtn);
         resetPasswordAccount = findViewById(R.id.resetPasswordLocal);
+        tvContact = findViewById(R.id.tvContact);
         signInAccount = GoogleSignIn.getLastSignedInAccount(this);
 
         auth = FirebaseAuth.getInstance();
@@ -97,9 +95,18 @@ public class  AccountActivity extends AppCompatActivity {
             tvName.setText(signInAccount.getDisplayName());
             tvEmail.setText(signInAccount.getEmail());
             Glide.with(this).load(photoUrl).into(ivEditPhoto);
+            tvContact.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddContact addContact = new AddContact(AccountActivity.this);
+                    addContact.startLoadingDialog();
+                }
+            });
+
         }
         else
             ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+
 
         userRef.addValueEventListener(new ValueEventListener() {
             @SuppressLint({"ResourceAsColor", "SetTextI18n"})
@@ -117,6 +124,8 @@ public class  AccountActivity extends AppCompatActivity {
                     else
                         ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
                     tvEditName.setText(snapshot.child("name").getValue().toString());
+                    tvContact.setText(snapshot.child("contactNum").getValue().toString());
+
                 }
                 else {
                     Toast.makeText(AccountActivity.this,"Error retrieving info",Toast.LENGTH_LONG).show();

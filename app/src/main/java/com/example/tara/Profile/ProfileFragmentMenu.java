@@ -168,8 +168,6 @@ public class ProfileFragmentMenu extends Fragment {
                     verifyStatus.getBackground().setColorFilter(getResources().getColor(R.color.green2),
                             PorterDuff.Mode.SRC_ATOP);
                 }
-
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -178,7 +176,6 @@ public class ProfileFragmentMenu extends Fragment {
 
         return view;
     }
-
 
     private void logoutUser(){
         mAuth.getInstance().signOut();
