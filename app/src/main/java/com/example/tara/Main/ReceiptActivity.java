@@ -68,7 +68,7 @@ public class ReceiptActivity extends AppCompatActivity {
         RandomString randomString = new RandomString();
         String result = randomString.generateAlphanumeric(12);
         transactionId.setText(result);
-        amount.setText("₱"+price);
+        amount.setText("Php "+price);
         host.setText(carHostName);
         brandModelYear.setText(bmy);
 
