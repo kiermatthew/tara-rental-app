@@ -204,7 +204,7 @@
                     android:paddingRight="10dp"
                     android:paddingBottom="3dp"
                     android:text="Not verified"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/red"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

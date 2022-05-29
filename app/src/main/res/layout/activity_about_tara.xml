@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grayish_blue1"
+    android:background="@drawable/about"
     tools:context=".Profile.AboutTara"
     android:fillViewport="true">
 
@@ -30,101 +30,6 @@
                app:title="ABOUT TARA" />
        </com.google.android.material.appbar.AppBarLayout>
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
-           <TextView
-               android:id="@+id/tvW"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="100dp"
-               android:layout_marginRight="100dp"
-               android:textAlignment="center"
-               android:layout_marginTop="25dp"
-               android:fontFamily="@font/poppins_semibold"
-               android:text="What is TARA"
-               android:textColor="@color/dark_blue"
-               android:textSize="25sp"
-               app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-
-           <com.google.android.material.card.MaterialCardView
-               android:layout_width="match_parent"
-               android:layout_height="500dp"
-               android:layout_marginLeft="30dp"
-               android:layout_marginRight="30dp"
-               android:layout_marginTop="20dp"
-               android:backgroundTint="@color/light_blue"
-               app:cardCornerRadius="15dp"
-               app:cardElevation="12dp"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginLeft="20dp"
-                       android:layout_marginTop="20dp"
-                       android:layout_marginRight="20dp"
-                       android:text="@string/aboutFirstContent"
-                       android:textAlignment="center"
-                       android:textColor="@color/white"
-                       android:textSize="18sp"/>
-           </com.google.android.material.card.MaterialCardView>
-
-
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="vertical">
-
-               <TextView
-                   android:id="@+id/tvWw"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:textAlignment="center"
-                   android:layout_marginTop="25dp"
-                   android:fontFamily="@font/poppins_semibold"
-                   android:text="What are the benefits?"
-                   android:textColor="@color/dark_blue"
-                   android:textSize="25sp"
-                   app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-               <com.google.android.material.card.MaterialCardView
-                   android:layout_width="match_parent"
-                   android:layout_height="580dp"
-                   android:layout_marginLeft="30dp"
-                   android:layout_marginRight="30dp"
-                   android:layout_marginTop="20dp"
-                   android:backgroundTint="@color/light_blue"
-                   app:cardCornerRadius="15dp"
-                   app:cardElevation="12dp"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginLeft="20dp"
-                       android:layout_marginTop="20dp"
-                       android:layout_marginRight="20dp"
-                       android:text="@string/aboutSecondContent"
-
-                       android:textAlignment="center"
-                       android:textColor="@color/white"
-                       android:textSize="13.5sp"/>
-               </com.google.android.material.card.MaterialCardView>
-
-           </LinearLayout>
-
-
-       </LinearLayout>
    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
