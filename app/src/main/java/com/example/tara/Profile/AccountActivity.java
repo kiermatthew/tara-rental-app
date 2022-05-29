@@ -48,7 +48,7 @@ import java.util.Locale;
 
 
 public class  AccountActivity extends AppCompatActivity {
-    private LinearLayout llName, llEmail, llPassword;
+//    private LinearLayout llName, llEmail, llPassword;
     private TextView tvName, tvEmail, tvPassword, verifyAccountBtn;
     private TextView tvEditName;
     private ImageView ivEditPhoto;
@@ -71,9 +71,9 @@ public class  AccountActivity extends AppCompatActivity {
         //fetch user data
 
         databaseLocation = getString(R.string.databasePath);
-        llName = findViewById(R.id.accountUserName);
-        llEmail = findViewById(R.id.accountEmail);
-        llPassword = findViewById(R.id.accountPassword);
+//        llName = findViewById(R.id.accountUserName);
+//        llEmail = findViewById(R.id.accountEmail);
+//        llPassword = findViewById(R.id.accountPassword);
         tvName = findViewById(R.id.tvName);
         tvEmail = findViewById(R.id.tvEmail);
         Toolbar toolbar = findViewById(R.id.appBar);
