@@ -63,10 +63,24 @@
                     android:textColor="@color/dark_blue"
                     android:textSize="20sp" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Transaction id:" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction id:"
+                        android:textColor="@color/dark_blue"/>
+                    <TextView
+                        android:id="@+id/transactionId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction id:"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
 
@@ -99,23 +113,68 @@
                 android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/dash">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:text="Name:" />
+                    android:layout_marginLeft="30dp"
+                    android:text="Date and Time"/>
 
                 <TextView
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="30dp"
                     android:text="Time" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout5">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Hosted By:"/>
+
+                <TextView
+                    android:id="@+id/hostReceipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Host" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout512"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout51">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Brand Model Year"/>
+
+                <TextView
+                    android:id="@+id/brandModelYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Brand Model Year" />
+
+            </LinearLayout>
+
+
 
             <TextView
                 android:id="@+id/textView11"
@@ -124,6 +183,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="100dp"
                 android:text="Total paid amount"
+                android:textColor="@color/dark_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +197,7 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:layout_marginLeft="25dp"
                 android:text="AMOUNT"
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/black"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

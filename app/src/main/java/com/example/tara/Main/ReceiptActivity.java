@@ -18,6 +18,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tara.R;
@@ -30,13 +31,17 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class ReceiptActivity extends AppCompatActivity {
     Button doneBtn;
-    String uid;
+    TextView amount,host,brandModelYear;
+    String uid,price,carHostName,bmy;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+    TextView transactionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +49,30 @@ public class ReceiptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receipt);
         getSupportActionBar().hide();
         doneBtn = findViewById(R.id.doneBtn);
+        transactionId = findViewById(R.id.transactionId);
+        amount = findViewById(R.id.amount);
+        TextView textView=findViewById(R.id.date);
+        host = findViewById(R.id.hostReceipt);
+        brandModelYear = findViewById(R.id.brandModelYear);
+        carHostName = getIntent().getStringExtra("carHostName");
+        bmy = getIntent().getStringExtra("bmy");
+        price = getIntent().getStringExtra("price");
 
-
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        String currentDateandTime = sdf.format(new Date());
+        textView.setText(currentDateandTime);
         ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
+
+        RandomString randomString = new RandomString();
+        String result = randomString.generateAlphanumeric(12);
+        transactionId.setText(result);
+        amount.setText("₱"+price);
+        host.setText(carHostName);
+        brandModelYear.setText(bmy);
+
+
 
 
 
@@ -92,5 +116,7 @@ public class ReceiptActivity extends AppCompatActivity {
 
 
         }
+
     }
+
 }
