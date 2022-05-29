@@ -50,7 +50,7 @@ public class ProfileFragmentMenu extends Fragment {
     DatabaseReference userRef;
     Boolean isVerified = false;
 
-    //Si boss Renz Brian Matias crush si Dir Demeke
+
 
     @SuppressLint("SetTextI18n")
     @Override
