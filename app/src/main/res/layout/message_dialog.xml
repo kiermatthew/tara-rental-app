@@ -1,61 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_gravity="center"
-    >
+    android:layout_gravity="center">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white2">
+        app:cardBackgroundColor="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="400dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/verification_icon"/>
 
             <TextView
                 android:id="@+id/tvMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginRight="35dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="You're account must be verified"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/dark_blue1" />
+                android:text="Account Must Be Verified"
+                android:textColor="@color/dark_blue1"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvSubMessage"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
                 android:text="Go to Profile -> Account -> Verify Account"
-                android:textColor="@color/dark_blue1"/>
+                android:textColor="@color/dark_blue1"
+                android:textSize="14.5sp"
+                android:textAlignment="center"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/okayBtn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="45dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/btn_violet"
+                android:backgroundTint="@color/violet"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Okay"
-                android:textStyle="bold"
                 android:textColor="@color/white1"
                 android:textSize="18sp"
-                android:background="@drawable/btn_violet"
-                android:backgroundTint="@color/violet" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
