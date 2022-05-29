@@ -254,7 +254,7 @@
                             android:id="@+id/imageView1"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_marginStart="24dp"
+                            android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             android:src="@drawable/profile_account"
@@ -265,7 +265,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="32dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="Account"
                             android:textColor="#5C6887"
@@ -288,7 +288,7 @@
                             android:id="@+id/imageView2"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_marginStart="24dp"
+                            android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -299,7 +299,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="32dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="About TARA"
                             android:textColor="#5C6887"
@@ -322,7 +322,7 @@
                             android:id="@+id/imageView3"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_marginStart="24dp"
+                            android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -333,7 +333,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="32dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="How Tara Works"
                             android:textColor="#5C6887"
@@ -356,7 +356,7 @@
                             android:id="@+id/imageView4"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_marginStart="24dp"
+                            android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -367,7 +367,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="32dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="Contact Support"
                             android:textColor="#5C6887"
@@ -390,7 +390,7 @@
                             android:id="@+id/imageView5"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:layout_marginStart="24dp"
+                            android:layout_marginStart="32dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -401,14 +401,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="32dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="Legal"
                             android:textColor="#5C6887"
                             android:textSize="18dp"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView5"
                             app:layout_constraintStart_toEndOf="@+id/imageView5"
-                            app:layout_constraintTop_toTopOf="@+id/imageView5"/>
+                            app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

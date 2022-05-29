@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradient_background_login_signup"
     tools:context=".Host.HostFragmentMenu">
 
     <TextView
@@ -16,7 +16,7 @@
         android:fontFamily="@font/poppins_regular"
         android:text="Book a Car"
         android:textSize="40dp"
-        android:textColor="@color/dark_blue1"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
