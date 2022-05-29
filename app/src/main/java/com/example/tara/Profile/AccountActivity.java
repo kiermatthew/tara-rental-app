@@ -48,13 +48,16 @@ import java.util.Locale;
 
 
 public class  AccountActivity extends AppCompatActivity {
-//    private LinearLayout llName, llEmail, llPassword;
-    private TextView tvName, tvEmail,verifyAccountBtn, tvContact;
+    //    private LinearLayout llName, llEmail, llPassword;
+    private TextView tvName, tvEmail, tvPassword, verifyAccountBtn, tvContact;
     private TextView tvEditName;
     private ImageView ivEditPhoto;
+    private Button saveChangesBtn;
     GoogleSignInAccount signInAccount;
+    StorageReference storageReference;
     DatabaseReference userRef;
     String databaseLocation;
+    Uri imageUri;
     FirebaseUser currentUser;
     TextView resetPasswordAccount;
     FirebaseAuth auth;
@@ -73,6 +76,7 @@ public class  AccountActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         ivEditPhoto = findViewById(R.id.editPhoto);
         tvEditName = findViewById(R.id.editName);
+        saveChangesBtn = findViewById(R.id.saveChangesBtn);
         verifyAccountBtn = findViewById(R.id.verifyAccountBtn);
         resetPasswordAccount = findViewById(R.id.resetPasswordLocal);
         tvContact = findViewById(R.id.tvContact);
@@ -112,16 +116,16 @@ public class  AccountActivity extends AppCompatActivity {
                     User user =  snapshot.getValue(User.class);
                     assert user != null;
                     if(!user.imageUrl.isEmpty()){
+                        tvName.setText(snapshot.child("name").getValue().toString());
+                        tvEmail.setText(snapshot.child("email").getValue().toString());
                         String imageUrl = snapshot.child("imageUrl").getValue().toString();
                         Glide.with(AccountActivity.this).load(imageUrl).into(ivEditPhoto);
                     }
                     else
                         ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
-
-                    tvName.setText(snapshot.child("name").getValue().toString());
-                    tvEmail.setText(snapshot.child("email").getValue().toString());
                     tvEditName.setText(snapshot.child("name").getValue().toString());
                     tvContact.setText(snapshot.child("contactNum").getValue().toString());
+
                 }
                 else {
                     Toast.makeText(AccountActivity.this,"Error retrieving info",Toast.LENGTH_LONG).show();
@@ -138,6 +142,7 @@ public class  AccountActivity extends AppCompatActivity {
             }
         });
 
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,7 +153,7 @@ public class  AccountActivity extends AppCompatActivity {
         ivEditPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AccountActivity.this,EditProfilePicture.class));
+                selectImage();
             }
         });
 
@@ -160,23 +165,26 @@ public class  AccountActivity extends AppCompatActivity {
                 passwordResetDialog.setTitle("Reset Password?");
                 passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
                 passwordResetDialog.setView(resetMail);
+
                 passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //extract the email link
                         String mail = resetMail.getText().toString();
 
-                            auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(AccountActivity.this, "Reset Link Sent to Your Email.", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(AccountActivity.this, "This Account is not yet Registered", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                        auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(AccountActivity.this, "Reset Link Sent to Your Email.", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(AccountActivity.this, "This Account is not yet Registered", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
                     }
                 });
                 passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -185,7 +193,10 @@ public class  AccountActivity extends AppCompatActivity {
 
                     }
                 });
+
                 passwordResetDialog.create().show();
+//                ResetDialog dialog = new ResetDialog(AccountActivity.this);
+//                dialog.startLoadingDialog();
             }
         });
 
@@ -196,10 +207,69 @@ public class  AccountActivity extends AppCompatActivity {
             }
         });
 
+        saveChangesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                uploadImage();
+                saveChangesBtn.setVisibility(View.INVISIBLE);
+            }
+        });
+
+    }/*End*/
+
+    private void selectImage() {
+        Intent galleryIntent = new Intent();
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        galleryIntent.setType("image/*");
+        startActivityForResult(galleryIntent, 2);
     }
 
-}
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //if image is selected, display the image
+        if(requestCode==2 && resultCode== -1 && data != null){
+            imageUri = data.getData();
+            ivEditPhoto.setImageURI(imageUri);
+            Glide.with(this).load(imageUri).into(ivEditPhoto);
+            saveChangesBtn.setVisibility(View.VISIBLE);
+        }
+    }
 
+    // upload the image to the cloud storage
+    private void uploadImage(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.CANADA);
+        Date now = new Date();
+        String fileName = formatter.format(now);
+
+        LoadingDialog loadingDialog = new LoadingDialog(AccountActivity.this);
+        loadingDialog.startLoadingDialog("Uploading photo");
+        storageReference = FirebaseStorage.getInstance("gs://tara-351111.appspot.com/").getReference("profile/"+fileName);
+        storageReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                loadingDialog.dismissDialog();
+                taskSnapshot.getStorage().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    // gets the image url and store it in the database
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        String imageUrl = task.getResult().toString();
+                        userRef.child("imageUrl").setValue(imageUrl);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AccountActivity.this, "Upload failed",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+
+
+}
 
 
 
