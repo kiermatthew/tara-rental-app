@@ -79,22 +79,39 @@ public class PaymentActivity extends AppCompatActivity {
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadingDialog.startLoadingDialog("Processing payment");
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        loadingDialog.dismissDialog();
-                        uploadData();
-                        book();
-                        Intent intent = new Intent(PaymentActivity.this, ReceiptActivity.class);
-                        intent.putExtra("price",price);
-                        intent.putExtra("carHostName",carHostName);
-                        intent.putExtra("bmy",bmy);
-                        startActivity(intent);
+                String card = cardNumberEditText.getText().toString();
+                String expiration = etExpiration.getText().toString();
+                String cardName = etCardName.getText().toString();
 
-                    }
-                },3000);
+                if(card.isEmpty()){
+                    cardNumberEditText.setError("Please enter card number");
+                    cardNumberEditText.requestFocus();
+
+                }else if(cardName.isEmpty()){
+                    etCardName.setError("Please enter card name");
+                    etCardName.requestFocus();
+                }
+                else if(expiration.isEmpty()){
+                    etExpiration.setError("Please enter expiration date");
+                    etExpiration.requestFocus();
+                }else{
+                    loadingDialog.startLoadingDialog("Processing payment");
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingDialog.dismissDialog();
+                            uploadData();
+                            book();
+                            Intent intent = new Intent(PaymentActivity.this, ReceiptActivity.class);
+                            intent.putExtra("price",price);
+                            intent.putExtra("carHostName",carHostName);
+                            intent.putExtra("bmy",bmy);
+                            startActivity(intent);
+
+                        }
+                    },3000);
+                }
             }
         });
 
@@ -206,6 +223,7 @@ public class PaymentActivity extends AppCompatActivity {
         userReference.child("bookedCars").child(carId).child(carHostId).setValue(bookedCars);
 
     }
+
 
 
 }

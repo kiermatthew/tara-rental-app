@@ -101,7 +101,7 @@ public class AccountVerification extends AppCompatActivity {
                         loadingDialog.dismissDialog();
                         userRef.child("isVerified").setValue(true);
                         //uploadImage();
-                        startActivity(new Intent(AccountVerification.this, Main.class));
+                        startActivity(new Intent(AccountVerification.this, AccountActivity.class));
                     }
                 },3000);
             }
@@ -120,20 +120,32 @@ public class AccountVerification extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         //if image is selected, display the image
         if(requestCode==1 && resultCode== -1 && data != null){
-            dlUri1 = data.getData();
-            ivDl1.setImageURI(dlUri1);
-            cvDl2.setVisibility(View.VISIBLE);
-            Toast.makeText(this,"Test1",Toast.LENGTH_LONG).show();
+            try {
+                dlUri1 = data.getData();
+                ivDl1.setImageURI(dlUri1);
+                cvDl2.setVisibility(View.VISIBLE);
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(AccountVerification.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            }
         }
         if(requestCode==2 && resultCode== -1 && data != null){
-            dlUri2 = data.getData();
-            ivDl2.setImageURI(dlUri2);
-            Toast.makeText(this,"Test2",Toast.LENGTH_LONG).show();
+            try {
+                dlUri2 = data.getData();
+                ivDl2.setImageURI(dlUri2);
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(AccountVerification.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            }
         }
         if(requestCode==3 && resultCode== -1 && data != null){
-            selfieUri = data.getData();
-            ivSelfie.setImageURI(selfieUri);
-            Toast.makeText(this,"Test3",Toast.LENGTH_LONG).show();
+            try {
+                selfieUri = data.getData();
+                ivSelfie.setImageURI(selfieUri);
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(AccountVerification.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

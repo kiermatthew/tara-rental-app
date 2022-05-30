@@ -69,11 +69,8 @@ public class ReceiptActivity extends AppCompatActivity {
         String result = randomString.generateAlphanumeric(12);
         transactionId.setText(result);
         amount.setText("Php "+price);
-        host.setText(carHostName);
+        host.setText(capitalizeWord(carHostName));
         brandModelYear.setText(bmy);
-
-
-
 
 
         doneBtn.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +114,17 @@ public class ReceiptActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public String capitalizeWord(String str){
+        String[] words =str.split("\\s");
+        String capitalizeWord="";
+        for(String w:words){
+            String first=w.substring(0,1);
+            String afterfirst=w.substring(1);
+            capitalizeWord+=first.toUpperCase()+afterfirst+" ";
+        }
+        return capitalizeWord.trim();
     }
 
 }
