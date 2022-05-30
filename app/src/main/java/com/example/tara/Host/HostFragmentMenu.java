@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.tara.Explore.CarDetails;
@@ -34,7 +35,7 @@ public class HostFragmentMenu extends Fragment {
         String databaseLocation = getString(R.string.databasePath);
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         userRef = FirebaseDatabase.getInstance(databaseLocation).getReference().child("users").child(userId);
-        Button hostBtn = view.findViewById(R.id.hostBtn);
+        CardView hostBtn = view.findViewById(R.id.hostBtn);
 
 
         hostBtn.setOnClickListener(new View.OnClickListener() {
