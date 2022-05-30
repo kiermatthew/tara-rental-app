@@ -9,6 +9,8 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,6 +44,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -123,6 +127,7 @@ public class  AccountActivity extends AppCompatActivity {
                     }
                     else
                         ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+                    tvName.setText(snapshot.child("name").getValue().toString());
                     tvEditName.setText(snapshot.child("name").getValue().toString());
                     tvContact.setText(snapshot.child("contactNum").getValue().toString());
 
@@ -218,8 +223,7 @@ public class  AccountActivity extends AppCompatActivity {
     }/*End*/
 
     private void selectImage() {
-        Intent galleryIntent = new Intent();
-        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, 2);
     }
@@ -228,11 +232,16 @@ public class  AccountActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //if image is selected, display the image
-        if(requestCode==2 && resultCode== -1 && data != null){
-            imageUri = data.getData();
-            ivEditPhoto.setImageURI(imageUri);
-            Glide.with(this).load(imageUri).into(ivEditPhoto);
-            saveChangesBtn.setVisibility(View.VISIBLE);
+        if(requestCode == 2 && resultCode== RESULT_OK && data != null){
+            try{
+                imageUri = data.getData();
+                ivEditPhoto.setImageURI(imageUri);
+                Glide.with(this).load(imageUri).into(ivEditPhoto);
+                saveChangesBtn.setVisibility(View.VISIBLE);
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(AccountActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

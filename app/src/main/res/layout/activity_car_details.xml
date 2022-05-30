@@ -103,7 +103,7 @@
 
                     <TextView
                         android:id="@+id/tvcdPricing"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/poppins_regular"
@@ -513,6 +513,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="2dp"
                             android:text="Php "
+                            android:textStyle="bold"
                             android:textColor="@color/dark_blue1"
                             android:textSize="20dp" />
 
@@ -533,6 +534,7 @@
                             android:layout_marginBottom="2dp"
                             android:fontFamily="@font/poppins_regular"
                             android:text="/day"
+                            android:textStyle="bold"
                             android:textColor="@color/dark_blue1"
                             android:textSize="20dp" />
 

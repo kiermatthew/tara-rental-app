@@ -42,6 +42,8 @@
                 android:layout_marginRight="30dp"
                 android:fontFamily="@font/poppins_regular"
                 android:textStyle="bold"
+                android:maxLength="11"
+                android:inputType="phone"
                 android:hint="Contact Number"
                 android:textColor="@color/dark_blue1"/>
 

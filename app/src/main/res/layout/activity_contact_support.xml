@@ -156,6 +156,7 @@
                 android:orientation="horizontal"
                 android:paddingLeft="30dp">
 
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
@@ -172,26 +173,27 @@
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
-                            android:src="@drawable/team1" />
+                            android:src="@drawable/team3" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:fontFamily="@font/poppins_regular"
-                            android:text="Kier Matthew Encarnacion"
+                            android:gravity="center"
+                            android:text="Renz Brian Matias"
                             android:textColor="@color/dark_blue1"
                             android:textSize="18sp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_regular"
-                            android:text="Full Stack Developer"
+                            android:text="Full stack Developer"
                             android:textColor="@color/blue"
                             android:textSize="16sp"
-                            android:textStyle="bold|italic"></TextView>
+                            android:textStyle="bold|italic"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -199,22 +201,20 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/kierFb"
+                                android:id="@+id/renzFb"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/logo_facebook"></ImageView>
+                                android:src="@drawable/logo_facebook"/>
 
                             <ImageView
-                                android:id="@+id/kierGit"
+                                android:id="@+id/renzGit"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
-                                android:src="@drawable/logo_github"></ImageView>
+                                android:src="@drawable/logo_github"/>
                         </LinearLayout>
-
-
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -246,7 +246,7 @@
                             android:text="Hazel Anne Caringal"
                             android:textColor="@color/dark_blue1"
                             android:textSize="18sp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -255,7 +255,7 @@
                             android:text="UI Designer"
                             android:textColor="@color/blue"
                             android:textSize="16sp"
-                            android:textStyle="bold|italic"></TextView>
+                            android:textStyle="bold|italic"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -268,14 +268,14 @@
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/logo_facebook"></ImageView>
+                                android:src="@drawable/logo_facebook"/>
 
                             <ImageView
                                 android:id="@+id/hazelGit"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
-                                android:src="@drawable/logo_github"></ImageView>
+                                android:src="@drawable/logo_github"/>
                         </LinearLayout>
 
 
@@ -285,8 +285,8 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
-                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="20dp"
+                    android:layout_marginLeft="30dp"
                     app:cardElevation="12dp">
 
                     <LinearLayout
@@ -299,18 +299,17 @@
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginTop="20dp"
-                            android:src="@drawable/team3" />
+                            android:src="@drawable/team1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:fontFamily="@font/poppins_regular"
-                            android:gravity="center"
-                            android:text="Renz Brian Matias"
+                            android:text="Kier Matthew Encarnacion"
                             android:textColor="@color/dark_blue1"
                             android:textSize="18sp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -319,7 +318,7 @@
                             android:text="Backend Developer"
                             android:textColor="@color/blue"
                             android:textSize="16sp"
-                            android:textStyle="bold|italic"></TextView>
+                            android:textStyle="bold|italic"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -327,28 +326,32 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/renzFb"
+                                android:id="@+id/kierFb"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/logo_facebook"></ImageView>
+                                android:src="@drawable/logo_facebook"/>
 
                             <ImageView
-                                android:id="@+id/renzGit"
+                                android:id="@+id/kierGit"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
-                                android:src="@drawable/logo_github"></ImageView>
+                                android:src="@drawable/logo_github"/>
                         </LinearLayout>
+
+
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
+
 
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="320dp"
                     android:layout_height="320dp"
                     android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="12dp">
 
@@ -373,7 +376,7 @@
                             android:text="Reycel Castillo"
                             android:textColor="@color/dark_blue1"
                             android:textSize="18sp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -382,7 +385,7 @@
                             android:text="UI Designer"
                             android:textColor="@color/blue"
                             android:textSize="16sp"
-                            android:textStyle="bold|italic"></TextView>
+                            android:textStyle="bold|italic"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -395,14 +398,14 @@
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/logo_facebook"></ImageView>
+                                android:src="@drawable/logo_facebook"/>
 
                             <ImageView
                                 android:id="@+id/reycelGit"
                                 android:layout_width="30dp"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="0dp"
-                                android:src="@drawable/logo_github"></ImageView>
+                                android:src="@drawable/logo_github"/>
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
