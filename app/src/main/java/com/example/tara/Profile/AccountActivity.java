@@ -119,14 +119,14 @@ public class  AccountActivity extends AppCompatActivity {
                 if(snapshot.exists() && snapshot.getChildrenCount() > 0){
                     User user =  snapshot.getValue(User.class);
                     assert user != null;
-                    if(!user.imageUrl.isEmpty()){
-                        tvName.setText(snapshot.child("name").getValue().toString());
-                        tvEmail.setText(snapshot.child("email").getValue().toString());
+                    if(!user.imageUrl.isEmpty()) {
                         String imageUrl = snapshot.child("imageUrl").getValue().toString();
                         Glide.with(AccountActivity.this).load(imageUrl).into(ivEditPhoto);
                     }
                     else
                         ivEditPhoto.setImageResource(R.drawable.ic_profile_image);
+
+                    tvEmail.setText(snapshot.child("email").getValue().toString());
                     tvName.setText(snapshot.child("name").getValue().toString());
                     tvEditName.setText(snapshot.child("name").getValue().toString());
                     tvContact.setText(snapshot.child("contactNum").getValue().toString());
