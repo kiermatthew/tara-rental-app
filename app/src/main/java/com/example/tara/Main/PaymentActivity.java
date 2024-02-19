@@ -108,7 +108,6 @@ public class PaymentActivity extends AppCompatActivity {
                             intent.putExtra("carHostName",carHostName);
                             intent.putExtra("bmy",bmy);
                             startActivity(intent);
-
                         }
                     },3000);
                 }

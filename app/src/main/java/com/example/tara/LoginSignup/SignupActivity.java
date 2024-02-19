@@ -184,7 +184,7 @@ public class SignupActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // store user info on database
-                                    String imageUrl = "";
+                                    String imageUrl = "https://www.shareicon.net/data/256x256/2016/05/24/770117_people_512x512.png";
                                     String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                     User user = new User(name,contactNumber,email,userId,imageUrl,false,false,false);
                                     String databaseLocation = getString(R.string.databasePath);

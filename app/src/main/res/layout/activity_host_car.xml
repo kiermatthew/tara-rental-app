@@ -521,8 +521,9 @@
             android:id="@+id/specCL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2AC">
 
@@ -530,86 +531,96 @@
                 android:id="@+id/tvSpecs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Specifications"
-                android:paddingLeft="40dp"
                 android:fontFamily="@font/poppins_regular"
-                android:textStyle="bold"
-                android:textSize="15sp"
+                android:paddingLeft="40dp"
+                android:text="Specifications"
                 android:textColor="@color/dark_blue1"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <LinearLayout
-                android:id="@+id/ll1"
-                android:layout_width="wrap_content"
+                android:id="@+id/llYearBrand"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSpecs">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Year"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:padding="0dp"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/etYear"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
+                        android:text="Year"
                         android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/select"
+                        android:padding="0dp"
+                        android:textColorHint="@color/dark_blue1">
 
-            <LinearLayout
-                android:id="@+id/ll2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvSpecs">
+                        <AutoCompleteTextView
+                            android:id="@+id/etYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Brand"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/etBrand"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
+                        android:text="Brand"
                         android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/select"
+                        android:textColorHint="@color/dark_blue1">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etBrand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
             </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/ll3"
@@ -621,15 +632,15 @@
                 android:paddingRight="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll2">
+                app:layout_constraintTop_toBottomOf="@+id/llYearBrand">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Model"
                     android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"
-                    android:text="Model" />
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/etModel"
@@ -646,149 +657,164 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
+
             <LinearLayout
-                android:id="@+id/ll4"
-                android:layout_width="wrap_content"
+                android:id="@+id/llTransmissionDrivetrain"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll3">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Transmission"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/dark_blue1"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/etTransmission"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
+                        android:text="Transmission"
                         android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:backgroundTint="@color/dark_blue1"
+                        android:hint="@string/select"
+                        android:textColorHint="@color/dark_blue1">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etTransmission"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Drivetrain"
+                        android:textColor="@color/dark_blue1"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/select"
+                        android:textColorHint="@color/dark_blue1">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etDrivetrain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
 
+
             <LinearLayout
-                android:id="@+id/ll5"
-                android:layout_width="wrap_content"
+                android:id="@+id/llSeatsType"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll3">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Drivetrain"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/etDrivetrain"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
-                        android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/ll6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll4">
+                app:layout_constraintTop_toBottomOf="@+id/llTransmissionDrivetrain">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Seats"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/etSeats"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
+                        android:text="Seats"
                         android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/ll7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll5">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/select"
+                        android:textColorHint="@color/dark_blue1">
 
-                <TextView
-                    android:layout_width="match_parent"
+                        <AutoCompleteTextView
+                            android:id="@+id/etSeats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Type"
-                    android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/etType"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
-                        android:inputType="none"
+                        android:text="Type"
                         android:textColor="@color/dark_blue1"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:textStyle="bold" />
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/select"
+                        android:textColorHint="@color/dark_blue1">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/etType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:inputType="none"
+                            android:textColor="@color/dark_blue1"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
 
@@ -802,22 +828,23 @@
                 android:paddingRight="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll7">
+                app:layout_constraintTop_toBottomOf="@+id/llSeatsType">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
-                    android:textStyle="bold"
+                    android:text="Fuel Type"
                     android:textColor="@color/dark_blue1"
-                    android:text="Fuel Type" />
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                    android:textColorHint="@color/dark_blue1">
+
                     <AutoCompleteTextView
                         android:id="@+id/etFuelType"
                         android:layout_width="match_parent"
@@ -846,16 +873,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Mileage"
                     android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"
-                    android:text="Mileage" />
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="@string/select"
-                    android:textColorHint="@color/dark_blue1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+                    android:textColorHint="@color/dark_blue1">
+
                     <AutoCompleteTextView
                         android:id="@+id/etMileage"
                         android:layout_width="match_parent"
@@ -883,35 +911,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Car Plate Number"
                     android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"
-                    android:text="Car Plate Number" />
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/etPlateNumber"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:paddingLeft="20dp"
+                    android:backgroundTint="@color/dark_blue1"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textSize="15sp"
+                    android:paddingLeft="20dp"
                     android:textColor="@color/dark_blue1"
-                    android:backgroundTint="@color/dark_blue1"/>
+                    android:textSize="15sp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tvUpload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Upload car photos *"
                 android:paddingLeft="40dp"
+                android:text="Upload car photos *"
+                android:textColor="@color/dark_blue1"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/dark_blue1"
                 app:layout_constraintTop_toBottomOf="@id/ll10" />
 
             <TextView
@@ -919,12 +947,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:paddingLeft="40dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Get the best shots of your car that will make\nheads turn."
-                android:textSize="14sp"
-                android:textColor="@color/dark_blue1"
                 android:lineHeight="20dp"
+                android:paddingLeft="40dp"
+                android:text="Get the best shots of your car that will make\nheads turn."
+                android:textColor="@color/dark_blue1"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -946,9 +974,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Exterior"
                     android:textColor="@color/dark_blue1"
-                    android:textStyle="bold"
-                    android:text="Exterior" />
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -959,71 +987,74 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        app:strokeColor="@color/violet"
                         android:layout_marginRight="20dp"
+                        app:strokeColor="@color/violet"
                         app:strokeWidth="1dp">
 
                         <ImageView
                             android:id="@+id/carExterior1"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
-                            android:src="@drawable/ic_plus_sign"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cvExterior1"
-                        android:visibility="invisible"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        app:strokeColor="@color/violet"
                         android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        app:strokeColor="@color/violet"
                         app:strokeWidth="1dp">
+
                         <ImageView
                             android:id="@+id/carExterior2"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
-                            android:src="@drawable/ic_plus_sign"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cvExterior2"
-                        android:visibility="invisible"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        app:strokeColor="@color/violet"
                         android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        app:strokeColor="@color/violet"
                         app:strokeWidth="1dp">
+
                         <ImageView
                             android:id="@+id/carExterior3"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
-                            android:src="@drawable/ic_plus_sign"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cvExterior3"
-                        android:visibility="invisible"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        app:strokeColor="@color/violet"
                         android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        app:strokeColor="@color/violet"
                         app:strokeWidth="1dp">
+
                         <ImageView
                             android:id="@+id/carExterior4"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
-                            android:src="@drawable/ic_plus_sign"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
@@ -1035,10 +1066,10 @@
                 android:id="@+id/ll12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:paddingLeft="40dp"
                 android:paddingBottom="10dp"
-                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -1049,8 +1080,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_regular"
                     android:text="Interior"
-                    android:textStyle="bold"
-                    android:textColor="@color/dark_blue1" />
+                    android:textColor="@color/dark_blue1"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1067,10 +1098,10 @@
 
                         <ImageView
                             android:id="@+id/carInterior1"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -1086,10 +1117,10 @@
 
                         <ImageView
                             android:id="@+id/carInterior2"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -1105,10 +1136,10 @@
 
                         <ImageView
                             android:id="@+id/carInterior3"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -1124,10 +1155,10 @@
 
                         <ImageView
                             android:id="@+id/carInterior4"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/violet"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/ic_plus_sign" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -1136,7 +1167,6 @@
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <TextView
             android:id="@+id/insuranceHeader"

@@ -110,7 +110,7 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                                     for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                                         String checkId = dataSnapshot1.getRef().getKey();
-                                        if(!(checkId.equals(userId))){
+                                        if(!(checkId.equals(userId))) {
                                             Car car = dataSnapshot1.getValue(Car.class);
                                             list.add(car);
                                         }
@@ -157,21 +157,10 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
 
     @Override
     public void onItemClick(int position) {
-        int index  = 0;
         if(!isFiltered){
-            for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-                if(index == position){
-                    DatabaseReference currentReference = childSnapshot.getRef();
-                    carId = currentReference.getKey();
-                }
-                for(DataSnapshot childSnapshot2 : childSnapshot.getChildren()){
-                    if(index == position){
-                        DatabaseReference ref2 = childSnapshot2.getRef();
-                        carHostId = ref2.getKey();
-                    }
-                }
-                index++;
-            }
+            Car list1 = list.get(position);
+            carId = list1.getCarId();
+            carHostId = list1.getUserId();
         }else{
             Car newList = filteredList.get(position);
             carId = newList.getCarId();
@@ -184,3 +173,17 @@ public class ExploreFragmentMenu extends Fragment implements RecyclerViewInterfa
         startActivity(intent);
     }
 }
+
+//            for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
+//                if(index == position){
+//                    DatabaseReference currentReference = childSnapshot.getRef();
+//                    carId = currentReference.getKey();
+//                }
+//                for(DataSnapshot childSnapshot2 : childSnapshot.getChildren()){
+//                    if(index == position){
+//                        DatabaseReference ref2 = childSnapshot2.getRef();
+//                        carHostId = ref2.getKey();
+//                    }
+//                }
+//                index++;
+//            }

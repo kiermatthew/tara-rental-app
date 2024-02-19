@@ -151,12 +151,8 @@ public class ProfileFragmentMenu extends Fragment {
                 User user =  snapshot.getValue(User.class);
                 //display name nad profile picture
                 if(user!=null){
-                    if(!user.imageUrl.isEmpty()){
-                        Uri imageUri = Uri.parse(user.imageUrl);
-                        Glide.with(getContext()).load(imageUri).into(ivPhoto1);
-                    }
-                    else
-                        ivPhoto1.setImageResource(R.drawable.ic_profile_image);
+                    Uri imageUri = Uri.parse(user.imageUrl);
+                    Glide.with(getContext()).load(imageUri).into(ivPhoto1);
                     tvUserName.setText(user.name);
                 }
                 else {

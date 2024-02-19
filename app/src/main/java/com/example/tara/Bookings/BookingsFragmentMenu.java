@@ -56,6 +56,7 @@ public class BookingsFragmentMenu extends Fragment implements RecyclerViewInterf
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 bookedCarRef = snapshot.child("bookedCars");
+                list.clear();
                 for(DataSnapshot snapshot1 : bookedCarRef.getChildren()){
                     for(DataSnapshot snapshot2 : snapshot1.getChildren()){
                         BookedCars bookedCars = snapshot2.getValue(BookedCars.class);
